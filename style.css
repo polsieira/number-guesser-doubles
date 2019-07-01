@@ -11,9 +11,6 @@ body {
   text-align: center;
   width: 100%;
 }
-.header-heading {
-  display: block;
-}
 #main-heading {
   color: #DD1972;
   font-size: 60px;
@@ -30,6 +27,31 @@ body {
   font-weight: 300;
   margin: 0px auto 20px auto;
   width: 50%;
+}
+.fancy {
+  line-height: 0.5;
+  text-align: center;
+}
+.fancy span {
+  display: inline-block;
+  position: relative;  
+}
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid white;
+  top: 0;
+  width: 33%;
+}
+.fancy span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.fancy span:after {
+  left: 100%;
+  margin-left: 15px;
 }
 
 
