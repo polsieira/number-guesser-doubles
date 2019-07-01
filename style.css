@@ -1,17 +1,23 @@
+/*Testing*/
+* {
+  border: red 2px solid;
+}
 /*Variables*/
 :root {
   --hot-pink: #DD1972;
   --light-pink: #F74D9B;
   --dark-grey: #404041;
   --grey: #D0D2D3;
-  --light-grey: #F7F7F7;
+  --light-grey: #6E6E6E;
+  --lightest-grey: #F7F7F7;
 }
 /*Body*/
 body {
+  border: var(--dark-grey) 2px solid;
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
   height: 800px;
-  width: 1240px;
+/*  width: 1240px;*/
 }
 /* Header */
 .header {
@@ -35,23 +41,17 @@ body {
   font-size: 20px;
   font-weight: 300;
   margin: 0px auto 40px auto;
-  width: 50%;
-}
-.fancy-lines {
-  line-height: 0.5;
-  text-align: center;
+  width: 90%;
 }
 .fancy-lines span {
-  display: inline-block;
   position: relative;  
 }
 .fancy-lines span:before,
 .fancy-lines span:after {
   content: "";
   position: absolute;
-  height: 5px;
-  border-bottom: 1px solid white;
-  top: 0;
+  border-bottom: 2px solid white;
+  top: 12px;
   width: 33%;
 }
 .fancy-lines span:before {
@@ -59,7 +59,6 @@ body {
   margin-right: 15px;
 }
 .fancy-lines span:after {
-  left: 100%;
   margin-left: 15px;
 }
 /*Content*/
