@@ -44,29 +44,31 @@ body {
   margin: 0px auto 40px auto;
   width: 90%;
 }
-.header__paragaph--fancy-lines span {
+.header__paragraph--fancy-lines span {
   position: relative;  
 }
-.header__paragaph--fancy-lines span:before,
-.header__paragaph--fancy-lines span:after {
+.header__paragraph--fancy-lines span:before,
+.header__paragraph--fancy-lines span:after {
   content: "";
   position: absolute;
   border-bottom: 2px solid white;
   top: 12px;
   width: 33%;
 }
-.header__paragaph--fancy-lines span:before {
+.header__paragraph--fancy-lines span:before {
   right: 100%;
   margin-right: 15px;
 }
-.header__paragaph--fancy-lines span:after {
+.header__paragraph--fancy-lines span:after {
   margin-left: 15px;
 }
 /*Main*/
 .main {
+  display: flex;
   overflow: hidden;
   vertical-align: top;
 }
+/*Section*/
 .section {
   box-sizing: border-box;
   display: block;
@@ -79,42 +81,45 @@ body {
   background-color: var(--lightest-grey);
   float: left;
 }
-.section__article {
+.article {
   background-color: #ffffff;
   border: var(--light-grey) 1.5px solid;
   display: block;
   margin: 20px auto 0px auto;
   width: 90%;
 }
-.section__article__paragraph {
+.article__paragraph {
   display: block;
   margin: 15px auto 0px auto;
   width: 90%
 }
-.section__article__form {
+.article__form {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
   margin: 0px auto 20px auto;
   width: 90%;
 }
-.section__article__form__div {
+.article__form__div {
   display: inline-block;
   width: 28%;
 }
-.section__article__form__div--max-range {
+.article__form__div--max-range {
   margin-left: 15px;
 }
 .label--styles {
   font-size: 12px;
 }
-.section__article__form__div__input {
+.article__form__div__input {
   display: block;
   width: 100%;
 }
 .input--styles {
+  box-sizing: border-box;
   display: block;
   height: 20px;
 }
-.section__article__form__button {
-  margin-left: 15px;
+.article__form__button {
   width: 28%;
 }
 .button--styles {
@@ -127,34 +132,35 @@ body {
 .button--states:disabled {
   background-color: var(--light-grey);
 }
-
 .button--states:hover:enabled {
   background-color: var(--hot-pink);
-
 }
-
 .button--states {
   background-color: var(--grey);
 }
-.section__article__form__div--name {
+.article__form__div--name {
   width: 65%;
 }
-.section__article__form__div--guess {
+.article__form__div--guess {
   margin-left: 15px;
 }
-.section__article--latest-score {
+.article--latest-score {
   margin-bottom: 20px;
 }
-
-.section__article__div {
+.article__div {
   margin: auto;
-  display: block;
+  margin-bottom: 15px;  
+  display: flex;
+  justify-content: space-between;
   width: 90%;
-  margin-bottom: 15px;
 }
-
-.section__article__div__button {
+.article__div__button {
   width: 30%;
+}
+.article__div--latest-score {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 }
 
 
