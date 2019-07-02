@@ -2,12 +2,39 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
   <script src="main.js"></script>
 </head>
 <body>
   <header class="header">
-    <h1 class="header-heading"><b class="header-heading-bold-text">NUMBER</b>GUESSER</h1>
-    <p class="header-paragraph fancy-lines"><span>ULTIMATE CHALLENGER EDITION</span></p>
+    <h1 class="header__heading"><b class="header__heading__bold-text">NUMBER</b>GUESSER</h1>
+    <p class="header__paragraph header__paragaph--fancy-lines"><span>ULTIMATE CHALLENGER EDITION</span></p>
   </header>
+  <main class="main">
+    <section class="section section--left">
+      <article class="section__article">
+        <p class="section__article__paragraph"><b>Set Range</b></p>
+        <form class="section__article__form">
+          <div class="section__article__form__div section__article__form__div--min-range">
+            <label class="section__article__form__div__label label--styles">Min Range</label>
+            <input type="text" class="section__article__form__div__input section__article__form__input--min-range input--styles">
+          </div>
+          <div class="section__article__form__div section__article__form__div--max-range">
+            <label class="section__article__form__div__label label--styles">Max Range</label>
+            <input type="text" class="section__article__form__div__input section__article__form__input--max-range input--styles">
+          </div>
+          <button type="button" class="section__article__form__button button--states button--styles">UPDATE</button>
+        </form>
+      </article>
+      <article class="section__article">
+        <p class="section__article__paragraph section__article__paragraph--small ">The current range is <u><b>1</b></u> to <u><b>100</b></u></p>
+      </article>
+      <article class="section__article">
+        <p class="section__article__paragraph"><b>Latest Score</b></p>
+      </article>        
+    </section>
+    <section class="section section--right">
+    
+    </section>
+  </main>
 </body>
