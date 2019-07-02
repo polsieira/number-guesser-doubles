@@ -6,12 +6,16 @@
   <script src="main.js"></script>
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
     <h1 class="header__heading"><b class="header__heading__bold-text">NUMBER</b>GUESSER</h1>
     <p class="header__paragraph header__paragaph--fancy-lines"><span>ULTIMATE CHALLENGER EDITION</span></p>
   </header>
+  <!-- Main -->
   <main class="main">
+    <!-- Left Section -->
     <section class="section section--left">
+      <!-- First Article -->
       <article class="section__article">
         <p class="section__article__paragraph"><b>Set Range</b></p>
         <form class="section__article__form">
@@ -26,13 +30,57 @@
           <button type="button" class="section__article__form__button button--states button--styles">UPDATE</button>
         </form>
       </article>
+      <!-- Second Article -->
       <article class="section__article">
-        <p class="section__article__paragraph section__article__paragraph--small ">The current range is <u><b>1</b></u> to <u><b>100</b></u></p>
+        <p class="section__article__paragraph">The current range is <u><b>1</b></u> to <u><b>100</b></u></p>
+        <p class="section__article__paragraph"><b>Challenger 1</b></p>
+        <form class="section__article__form">
+          <div class="section__article__form__div section__article__form__div--name">
+            <label class="section__article__form__div__label label--styles">Name</label>
+            <input type="text" class="section__article__form__div__input section__article__form__input--name input--styles">
+          </div>
+          <div class="section__article__form__div section__article__form__div--guess">
+            <label class="section__article__form__div__label label--styles">Guess</label>
+            <input type="text" class="section__article__form__div__input section__article__form__input--guess input--styles">
+          </div>
+         </form> 
+        <p class="section__article__paragraph"><b>Challenger 2</b></p>
+        <form class="section__article__form">
+          <div class="section__article__form__div section__article__form__div--name">
+            <label class="section__article__form__div__label label--styles">Name</label>
+            <input type="text" class="section__article__form__div__input section__article__form__input--name input--styles">
+          </div>
+          <div class="section__article__form__div section__article__form__div--guess">
+            <label class="section__article__form__div__label label--styles">Guess</label>
+            <input type="text" class="section__article__form__div__input section__article__form__input--guess input--styles">
+          </div> 
+         </form>          
       </article>
-      <article class="section__article">
+      <!-- Third Article -->
+      <article class="section__article section__article--latest-score">
         <p class="section__article__paragraph"><b>Latest Score</b></p>
+        <div class="section__article__div section__article__div--left">
+          <p class="section__article__div__paragraph">
+            <b>Challenger 1 Name</b><br/>
+            current guess<br/>
+            <span>97</span><br/>
+            <span>that's too high</span> 
+          </p>
+        </div>
+        <div class="section__article__div section__article__div--right">
+          <p class="section__article__div__paragraph">
+            <b>Challenger 2 Name</b><br/>
+            current guess<br/>
+            <span>3</span><br/>
+            <span>that's too low</span> 
+          </p>
+        </div>
+        <div class="section__article__div">
+          
+        </div>
       </article>        
     </section>
+    <!-- Right Section -->
     <section class="section section--right">
     
     </section>

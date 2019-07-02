@@ -19,7 +19,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   margin: 0px;
-/*  width: 1240px;*/
 }
 /* Header */
 .header {
@@ -69,19 +68,16 @@ body {
   vertical-align: top;
 }
 .section {
+  box-sizing: border-box;
   display: block;
   border: var(--dark-grey) 1px solid;
-  height: 700px;
   margin: 0px;
   width: 50%;
 }
+/*Content Section Left*/
 .section--left {
   background-color: var(--lightest-grey);
   float: left;
-}
-.section--right {
-  background-color: var(--grey);
-  float: right;
 }
 .section__article {
   background-color: #ffffff;
@@ -91,19 +87,17 @@ body {
   width: 90%;
 }
 .section__article__paragraph {
-  display: inline-block;
-  margin: 15px 0px 0px 15px;
+  display: block;
+  margin: 15px auto 0px auto;
+  width: 90%
 }
 .section__article__form {
-  margin: 0px 15px 20px 10px;
-  width: 100%;
+  margin: 0px auto 20px auto;
+  width: 90%;
 }
 .section__article__form__div {
   display: inline-block;
   width: 28%;
-}
-.section__article__form__div--min-range {
-  margin-left: 5px;
 }
 .section__article__form__div--max-range {
   margin-left: 15px;
@@ -137,7 +131,18 @@ body {
 .button--states:active:enabled {
   background-color: var(--grey);
 }
-/*Content Section Left*/
-
-
+.section__article__form__div--name {
+  width: 65%;
+}
+.section__article__form__div--guess {
+  margin-left: 15px;
+}
+.section__article--latest-score {
+  margin-bottom: 20px;
+}
+/*Content Section Right*/
+.section--right {
+  background-color: var(--grey);
+  float: right;
+}
 
