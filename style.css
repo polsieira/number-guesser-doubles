@@ -11,14 +11,18 @@
   --grey: #6E6E6E;
   --lightest-grey: #F7F7F7;
 }
+* {
+  box-sizing: border-box;
+}
 /*Body*/
 body {
   border: var(--dark-grey) 2px solid;
-  box-sizing: border-box;
   color: var(--grey);
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   margin: 0px;
+  width: 1040px; /*Take off after finished setting up HTML and CSS*/
+  height: 800px;
 }
 /* Header */
 .header {
@@ -76,10 +80,8 @@ body {
   margin: 0px;
   width: 50%;
 }
-/*Content Section Left*/
 .section--left {
   background-color: var(--lightest-grey);
-  float: left;
 }
 .article {
   background-color: #ffffff;
@@ -103,9 +105,6 @@ body {
 .article__form__div {
   display: inline-block;
   width: 28%;
-}
-.article__form__div--max-range {
-  margin-left: 15px;
 }
 .label--styles {
   font-size: 12px;
@@ -159,17 +158,19 @@ body {
 }
 .article__div--latest-score {
   display: flex;
-  justify-content: space-around;
   text-align: center;
 }
-
-
-
+.article__div--right,
+.article__div--left {
+  width: 50%;
+}
+.verticle-line {
+  border-left: 2px var(--light-grey) solid;
+}
 
 /*Content Section Right*/
 .section--right {
   background-color: var(--grey);
-  float: right;
 }
 
 

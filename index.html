@@ -15,7 +15,7 @@
   <main class="main">
     <!-- Left Section -->
     <section class="section section--left">
-      <!-- First Article -->
+      <!-- First Article - Set Range-->
       <article class="article">
         <p class="article__paragraph"><b>Set Range</b></p>
         <form class="article__form">
@@ -30,7 +30,7 @@
           <button type="button" class="article__form__button article__form__button--update button--states button--styles">UPDATE</button>
         </form>
       </article>
-      <!-- Second Article -->
+      <!-- Second Article - Input Guess -->
       <article class="article">
         <p class="article__paragraph">The current range is <u><b>1</b></u> to <u><b>100</b></u></p>
         <p class="article__paragraph"><b>Challenger 1</b></p>
@@ -61,22 +61,24 @@
            <button type="button" class="article__div__button button--states button--styles">CLEAR GAME</button>
          </div>      
       </article>
-      <!-- Third Article -->
+      <!-- Third Article - Latest Guess -->
       <article class="article article--latest-score">
         <p class="article__paragraph"><b>Latest Score</b></p>
         <div class="article__div--latest-score">
-          <div class="article__div__div article__div--left">
-            <p class="article__div__div__paragraph">
+          <div class="article__div--left">
+            <p class="article__div__paragraph">
               <b>Challenger 1 Name</b><br/>
-              current guess<br/>
+              <span>current guess</span><br/>
               <span>97</span><br/>
               <span>that's too high</span> 
             </p>
           </div>
-          <div class="article__div__div article__div--right">
-            <p class="article__div__div__paragraph">
+          <div class="verticle-line">
+          </div>
+          <div class="article__div--right">
+            <p class="article__div__paragraph">
               <b>Challenger 2 Name</b><br/>
-              current guess<br/>
+              <span>current guess</span><br/>
               <span>3</span><br/>
               <span>that's too low</span> 
             </p>
