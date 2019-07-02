@@ -121,14 +121,19 @@ body {
   border-radius: 25px;
   font-family: 'Open Sans', sans-serif;
   height: 26px;
+  font-weight: bold;
+  color: white;
 }
 .button--states:disabled {
   background-color: var(--light-grey);
 }
+
 .button--states:hover:enabled {
-  background-color: var(--pink);
+  background-color: var(--hot-pink);
+
 }
-.button--states:active:enabled {
+
+.button--states {
   background-color: var(--grey);
 }
 .section__article__form__div--name {
@@ -140,9 +145,26 @@ body {
 .section__article--latest-score {
   margin-bottom: 20px;
 }
+
+.section__article__div {
+  margin: auto;
+  display: block;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+.section__article__div__button {
+  width: 30%;
+}
+
+
+
+
 /*Content Section Right*/
 .section--right {
   background-color: var(--grey);
   float: right;
 }
+
+
 
