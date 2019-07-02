@@ -21,7 +21,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   margin: 0px;
-  width: 1040px; /*Take off after finished setting up HTML and CSS*/
   height: 800px;
 }
 /* Header */
@@ -135,6 +134,9 @@ body {
 .button--states {
   background-color: var(--grey);
 }
+.article__paragraph--current-range {
+  font-size: 14px;
+}
 .article__form__div--name {
   width: 65%;
 }
@@ -163,7 +165,23 @@ body {
   width: 50%;
 }
 .verticle-line {
+  bottom: 2%;
   border-left: 2px var(--light-grey) solid;
+  left: 25%;  
+  position: absolute;
+  top: 73%;
+}
+.span--challenger-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.span--current-guess {
+  font-size: 14px;
+}
+.span--number {
+  color: var(--light-pink);
+  font-size: 60px;
+  font-weight: 700;
 }
 
 /*Content Section Right*/
