@@ -163,14 +163,17 @@ body {
 .article__div--left {
   width: 50%;
 }
-.verticle-line {
+.article__div--left {
+  border-right: 2px var(--light-grey) solid;
+}
+/*.verticle-line {
   bottom: 2%;
   border-left: 2px var(--light-grey) solid;
   left: 25%;  
   position: absolute;
   top: 73%;
 }
-.span--challenger-name {
+*/.span--challenger-name {
   font-size: 14px;
   font-weight: 700;
 }
@@ -182,7 +185,6 @@ body {
   font-size: 60px;
   font-weight: 700;
 }
-
 /*Content Section Right*/
 .section--right {
   background-color: var(--grey);
