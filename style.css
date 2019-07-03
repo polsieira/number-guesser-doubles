@@ -122,7 +122,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   height: 26px;
   font-weight: bold;
-  color: white;
+  color: white; 
+}
+.button--styles:focus{
+ border-color:transparent!important;
+ outline:none;
 }
 .button--states:disabled {
   background-color: var(--light-grey);
