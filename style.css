@@ -129,6 +129,8 @@ body {
 }
 .button--states:hover:enabled {
   background-color: var(--hot-pink);
+  outline: none;
+  border: none;
 }
 .button--states {
   background-color: var(--grey);
