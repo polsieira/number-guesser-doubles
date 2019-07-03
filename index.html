@@ -2,12 +2,94 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
-  <script src="main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
-    <h1 class="header-heading"><b class="header-heading-bold-text">NUMBER</b>GUESSER</h1>
-    <p class="header-paragraph fancy-lines"><span>ULTIMATE CHALLENGER EDITION</span></p>
+    <h1 class="header__heading"><b class="header__heading__bold-text">NUMBER</b>GUESSER</h1>
+    <p class="header__paragraph header__paragraph--fancy-lines"><span>ULTIMATE CHALLENGER EDITION</span></p>
   </header>
+  <!-- Main -->
+  <main class="main">
+    <!-- Left Section -->
+    <section class="section section--left">
+      <!-- First Article - Set Range-->
+      <article class="article">
+        <p class="article__paragraph"><b>Set Range</b></p>
+        <form class="article__form">
+          <div class="article__form__div article__form__div--min-range">
+            <label class="article__form__div__label label--styles">Min Range</label>
+            <input type="text" class="article__form__div__input article__form__input--min-range input--styles">
+          </div>
+          <div class="article__form__div article__form__div--max-range">
+            <label class="article__form__div__label label--styles">Max Range</label>
+            <input type="text" class="article__form__div__input article__form__input--max-range input--styles">
+          </div>
+          <button type="button" class="article__form__button article__form__button--update button--states button--styles">UPDATE</button>
+        </form>
+      </article>
+      <!-- Second Article - Input Guess -->
+      <article class="article">
+        <p class="article__paragraph article__paragraph--current-range">The current range is <u><b class="bold--min">1</b></u> to <u><b class="bold--max">100</b></u></p>
+        <p class="article__paragraph"><b>Challenger 1</b></p>
+        <form class="article__form">
+          <div class="article__form__div article__form__div--name">
+            <label class="article__form__div__label label--styles">Name</label>
+            <input type="text" class="article__form__div__input article__form__input--name input--styles">
+          </div>
+          <div class="article__form__div article__form__div--guess">
+            <label class="article__form__div__label label--styles">Guess</label>
+            <input type="text" class="article__form__div__input article__form__input--guess input--styles">
+          </div>
+         </form> 
+        <p class="article__paragraph"><b>Challenger 2</b></p>
+        <form class="article__form">
+          <div class="article__form__div article__form__div--name">
+            <label class="article__form__div__label label--styles">Name</label>
+            <input type="text" class="article__form__div__input article__form__input--name input--styles">
+          </div>
+          <div class="article__form__div article__form__div--guess">
+            <label class="article__form__div__label label--styles">Guess</label>
+            <input type="text" class="article__form__div__input article__form__input--guess input--styles">
+          </div> 
+         </form>    
+         <div class="article__div">
+           <button type="button" class="article__div__button button--states button--styles">SUBMIT GUESS</button>        
+           <button type="button" class="article__div__button button--states button--styles">RESTART GAME</button>
+           <button type="button" class="article__div__button button--states button--styles">CLEAR GAME</button>
+         </div>      
+      </article>
+      <!-- Third Article - Latest Guess -->
+      <article class="article article--latest-score">
+        <p class="article__paragraph"><b>Latest Score</b></p>
+        <div class="article__div--latest-score">
+          <div class="article__div--left">
+            <p class="article__div__paragraph">
+              <span class="span--challenger-name">Challenger 1 Name</span><br/>
+              <span class="span--current-guess">current guess</span><br/>
+              <span class="span--number">97</span><br/>
+              <span class="span--high-low">that's too high</span> 
+            </p>
+          </div>
+          <div class="verticle-line">
+          </div>
+          <div class="article__div--right">
+            <p class="article__div__paragraph">
+              <span class="span--challenger-name">Challenger 2 Name</span><br/>
+              <span class="span--current-guess">current guess</span><br/>
+              <span class="span--number">3</span><br/>
+              <span class="span--high-low">that's too low</span> 
+            </p>
+          </div>
+        </div>
+      </article>        
+    </section>
+    <!-- Right Section -->
+    <section class="section section--right">
+    
+    </section>
+  </main>
 </body>
+<script src="main.js"></script>
+</html>

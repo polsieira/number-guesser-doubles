@@ -1,23 +1,26 @@
 /*Testing*/
-* {
+/** {
   border: red 2px solid;
-}
+}*/
 /*Variables*/
 :root {
   --hot-pink: #DD1972;
   --light-pink: #F74D9B;
   --dark-grey: #404041;
-  --grey: #D0D2D3;
-  --light-grey: #6E6E6E;
+  --light-grey: #D0D2D3;
+  --grey: #6E6E6E;
   --lightest-grey: #F7F7F7;
+}
+* {
+  box-sizing: border-box;
 }
 /*Body*/
 body {
   border: var(--dark-grey) 2px solid;
+  color: var(--grey);
   font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   margin: 0px;
-  height: 800px;
-/*  width: 1240px;*/
 }
 /* Header */
 .header {
@@ -26,41 +29,178 @@ body {
   text-align: center;
   width: 100%;
 }
-.header-heading {
+.header__heading {
   color: var(--hot-pink);
   font-size: 60px;
   font-weight: 300;
   margin: 20px auto 0px auto;
   width: 90%;
 }
-.header-heading-bold-text {
+.header__heading__bold-text {
   font-weight: 700;
 }
-.header-paragraph {
+.header__paragraph {
   color: #ffffff;
   font-size: 20px;
   font-weight: 300;
   margin: 0px auto 40px auto;
   width: 90%;
 }
-.fancy-lines span {
+.header__paragraph--fancy-lines span {
   position: relative;  
 }
-.fancy-lines span:before,
-.fancy-lines span:after {
+.header__paragraph--fancy-lines span:before,
+.header__paragraph--fancy-lines span:after {
   content: "";
   position: absolute;
   border-bottom: 2px solid white;
   top: 12px;
   width: 33%;
 }
-.fancy-lines span:before {
+.header__paragraph--fancy-lines span:before {
   right: 100%;
   margin-right: 15px;
 }
-.fancy-lines span:after {
+.header__paragraph--fancy-lines span:after {
   margin-left: 15px;
 }
-/*Content*/
+/*Main*/
+.main {
+  display: flex;
+  overflow: hidden;
+  vertical-align: top;
+}
+/*Section*/
+.section {
+  box-sizing: border-box;
+  border: var(--dark-grey) 1px solid;
+  margin: 0px;
+  width: 50%;
+}
+.section--left {
+  background-color: var(--lightest-grey);
+}
+.article {
+  background-color: #ffffff;
+  border: var(--light-grey) 1.5px solid;
+  margin: 20px auto 0px auto;
+  width: 90%;
+}
+.article__paragraph {
+  display: block;
+  margin: 15px auto 0px auto;
+  width: 90%
+}
+.article__form {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto 20px auto;
+  width: 90%;
+}
+.article__form__div {
+  display: inline-block;
+  width: 28%;
+}
+.label--styles {
+  font-size: 12px;
+}
+.article__form__div__input {
+  display: block;
+  width: 100%;
+}
+.input--styles {
+  box-sizing: border-box;
+  display: block;
+  height: 20px;
+  padding: 10px 5px 10px 5px
+}
+.input--styles:focus{
+ border: solid; 
+ border-color: var(--light-pink);
+ outline: none;
+}
+.article__form__button {
+  width: 28%;
+}
+.button--styles {
+  border-radius: 25px;
+  font-family: 'Open Sans', sans-serif;
+  height: 26px;
+  font-weight: bold;
+  color: white; 
+}
+.button--styles:focus{
+ border-color:transparent!important;
+ outline:none;
+}
+.button--states:disabled {
+  background-color: var(--light-grey);
+}
+.button--states:hover:enabled {
+  background-color: var(--hot-pink);
+  outline: none;
+  border: none;
+}
+.button--states {
+  background-color: var(--grey);
+}
+.article__paragraph--current-range {
+  font-size: 14px;
+}
+.article__form__div--name {
+  width: 65%;
+}
+.article__form__div--guess {
+  margin-left: 15px;
+}
+.article--latest-score {
+  margin-bottom: 20px;
+}
+.article__div {
+  margin: auto;
+  margin-bottom: 15px;  
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.article__div__button {
+  width: 30%;
+}
+.article__div--latest-score {
+  display: flex;
+  text-align: center;
+}
+.article__div--right,
+.article__div--left {
+  width: 50%;
+}
+.article__div--left {
+  border-right: 2px var(--light-grey) solid;
+}
+/*.verticle-line {
+  bottom: 2%;
+  border-left: 2px var(--light-grey) solid;
+  left: 25%;  
+  position: absolute;
+  top: 73%;
+}
+*/.span--challenger-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.span--current-guess {
+  font-size: 14px;
+}
+.span--number {
+  color: var(--light-pink);
+  font-size: 60px;
+  font-weight: 700;
+}
+/*Content Section Right*/
+.section--right {
+  background-color: var(--grey);
+}
+
 
 
