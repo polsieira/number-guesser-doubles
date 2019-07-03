@@ -1,12 +1,17 @@
 // Generate Random Number
 // Update Max and Min in Current Range
 
+// Function for calculating random integer
 function getRandInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Default random number in case user doesn't choose range
+var min_default = 1;
+var max_default = 100;
+var randInt = getRandInt(min_default, max_default);
+
 var updateButton = document.querySelector(".article__form__button--update");
-var randInt = null;
 
 updateButton.addEventListener('click', function(){ 
   var min = parseInt(document.querySelector(".article__form__input--min-range").value);
@@ -20,28 +25,32 @@ updateButton.addEventListener('click', function(){
 
 console.log("random = " + randInt)
 
-// Populate Challenger Names and Guesses
+// Populate Challenger Names, Guesses, and Messages
 var submitButton = document.querySelector(".article__div__button--submit");
+var nGuesses = 0;
 
 submitButton.addEventListener('click', function(){
+  // Populate Names and Guesses
   challengerOne = document.querySelector(".article__form__input--nameOne").value;
   challengerTwo = document.querySelector(".article__form__input--nameTwo").value;
-  guessOne = parseInt(document.querySelector(".article__form__input--guessOne").value);
-  guessTwo = parseInt(document.querySelector(".article__form__input--guessTwo").value);
+  guessOne = Math.round(parseInt(document.querySelector(".article__form__input--guessOne").value));
+  guessTwo = Math.round(parseInt(document.querySelector(".article__form__input--guessTwo").value));
   document.querySelector(".article__paragraph--challenger-1").innerText = challengerOne;
   document.querySelector(".article__paragraph--challenger-2").innerText = challengerTwo;
   document.querySelector(".span--challenger-1").innerText = challengerOne;
   document.querySelector(".span--challenger-2").innerText = challengerTwo;
+  document.querySelector(".span__challenger1-name").innerText = challengerOne;
+  document.querySelector(".span__challenger2-name").innerText = challengerTwo;
   document.querySelector(".span--number-1").innerText = guessOne;
   document.querySelector(".span--number-2").innerText = guessTwo;  
-
-
+  // Populate message
   if (guessOne > randInt) {
-    document.querySelector(".span--high-low-1").innerText = "that's too high";
+    document.querySelector(".span--high-low-1").innerText = "that'swq too high";
   } else if (guessOne < randInt) {
     document.querySelector(".span--high-low-1").innerText = "that's too low";
   } else {
     document.querySelector(".span--high-low-1").innerText = "BOOM!";
+    clearForm();
   }
 
   if (guessTwo > randInt) {
@@ -49,9 +58,10 @@ submitButton.addEventListener('click', function(){
   } else if (guessTwo < randInt) {
     document.querySelector(".span--high-low-2").innerText = "that's too low";
   } else {
-    document.querySelector(".span--high-low-2").innerText = "BOOM!";
+    document.querySelector(".span--high-low-2").innerText = "BOOM!"
+    clearForm();
   }
-
+  // Enable disable button
   if (document.querySelector(".article__form__input--guessOne").value === "" && document.querySelector(".article__form__input--guessTwo").value === "" && document.querySelector(".article__form__input--nameOne").value === "" && document.querySelector(".article__form__input--nameTwo").value === "") {
   clearButton.disabled = true;
   } else {
@@ -62,14 +72,23 @@ submitButton.addEventListener('click', function(){
 // Clear Challenger Names and Guesses
 var clearButton = document.querySelector(".article__div__button--clear");
 
-clearButton.addEventListener('click', function(){
+function clearForm() {
   document.querySelector(".article__form__input--nameOne").value = "";
   document.querySelector(".article__form__input--nameTwo").value = "";
   document.querySelector(".article__form__input--guessOne").value = "";
   document.querySelector(".article__form__input--guessTwo").value = "";
+}
+
+function clearLatestGuess() {
   document.querySelector(".span--high-low-1").innerText = "";
   document.querySelector(".span--high-low-2").innerText = "";  
   document.querySelector(".span--number-1").innerText = "";  
   document.querySelector(".span--number-2").innerText = "";  
+}
+
+clearButton.addEventListener('click', function(){
+  clearForm();
+  clearLatestGuess();
   clearButton.disabled = true;
 })
+

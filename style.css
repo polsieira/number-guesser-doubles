@@ -216,6 +216,7 @@ body {
     color: var(--grey);
     font-size: 14px;
     font-weight: bold;
+    text-align: center;
   }
 
   .header-for-winner-card {
@@ -254,7 +255,9 @@ body {
     margin: auto;
     width: 90%;
   }
-
+  .bottom-data-line-paragraph {
+    margin: 0px;
+  }
   .total-number-guesses,
   .total-time-spent {
     color: var(--grey);
@@ -269,11 +272,15 @@ body {
     font-size: 14px;
     font-size: 20px;
     height: 28px;
+    margin: 5px 0px 5px 0px;
     text-align: center;
     width: 28px;
   }
 
+/*Media Queries*/
+@media only screen and (max-width: 600px) {
 
+}
 
 
 
