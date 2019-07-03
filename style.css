@@ -113,6 +113,12 @@ body {
   box-sizing: border-box;
   display: block;
   height: 20px;
+  padding: 10px 5px 10px 5px
+}
+.input--styles:focus{
+ border: solid; 
+ border-color: var(--light-pink);
+ outline: none;
 }
 .article__form__button {
   width: 28%;
@@ -122,13 +128,19 @@ body {
   font-family: 'Open Sans', sans-serif;
   height: 26px;
   font-weight: bold;
-  color: white;
+  color: white; 
+}
+.button--styles:focus{
+ border-color:transparent!important;
+ outline:none;
 }
 .button--states:disabled {
   background-color: var(--light-grey);
 }
 .button--states:hover:enabled {
   background-color: var(--hot-pink);
+  outline: none;
+  border: none;
 }
 .button--states {
   background-color: var(--grey);
@@ -173,7 +185,9 @@ body {
   position: absolute;
   top: 73%;
 }
-*/.span--challenger-name {
+*/
+.span--challenger-1,
+.span--challenger-2 {
   font-size: 14px;
   font-weight: 700;
 }
