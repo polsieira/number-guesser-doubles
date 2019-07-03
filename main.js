@@ -6,7 +6,10 @@ function getRandInt(min, max) {
 }
 
 var updateButton = document.querySelector(".article__form__button--update");
-var randInt = null;
+
+var min_default = 1;
+var max_default = 100;
+var randInt = getRandInt(min_default, max_default);
 
 updateButton.addEventListener('click', function(){ 
   var min = parseInt(document.querySelector(".article__form__input--min-range").value);
@@ -26,8 +29,8 @@ var submitButton = document.querySelector(".article__div__button--submit");
 submitButton.addEventListener('click', function(){
   challengerOne = document.querySelector(".article__form__input--nameOne").value;
   challengerTwo = document.querySelector(".article__form__input--nameTwo").value;
-  guessOne = parseInt(document.querySelector(".article__form__input--guessOne").value);
-  guessTwo = parseInt(document.querySelector(".article__form__input--guessTwo").value);
+  guessOne = Math.round(parseInt(document.querySelector(".article__form__input--guessOne").value));
+  guessTwo = Math.round(parseInt(document.querySelector(".article__form__input--guessTwo").value));
   document.querySelector(".article__paragraph--challenger-1").innerText = challengerOne;
   document.querySelector(".article__paragraph--challenger-2").innerText = challengerTwo;
   document.querySelector(".span--challenger-1").innerText = challengerOne;
