@@ -185,7 +185,9 @@ body {
   position: absolute;
   top: 73%;
 }
-*/.span--challenger-name {
+*/
+.span--challenger-1,
+.span--challenger-2 {
   font-size: 14px;
   font-weight: 700;
 }
