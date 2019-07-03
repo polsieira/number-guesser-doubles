@@ -203,6 +203,78 @@ body {
 .section--right {
   background-color: var(--grey);
 }
+/*Winner Cards*/
+.article-winner-card {
+  background-color: #ffffff;
+  border: var(--light-grey) 1.5px solid;
+  margin: 20px auto 0px auto;
+  width: 80%;
+}
+
+  .span__challenger1-name,
+  .span__challenger2-name {
+    color: var(--grey);
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .header-for-winner-card {
+    align-items: center;
+    border-bottom: 2px solid var(--light-grey);
+    color: var(--grey);
+    display: flex;
+    font-weight: 300;
+    justify-content: space-around;
+    margin: 4px auto 4px auto;
+    width: 90%;
+  }
+
+  .article__div__winner-card {
+    margin-bottom: 15px;
+    margin: auto;
+  }
+
+  .winning-challenger-name {
+    color: var(--grey);
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  .challenge-winner {
+    color: var(--grey);
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .bottom-data-line {
+    align-items: center;
+    border-top: var(--light-grey) 1.5px solid;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+  }
+
+  .total-number-guesses,
+  .total-time-spent {
+    color: var(--grey);
+    font-weight: bold;
+  }
+
+  .winner-card-close-button {
+    background-color: var(--grey);
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-size: 20px;
+    height: 28px;
+    text-align: center;
+    width: 28px;
+  }
+
+
+
 
 
 
