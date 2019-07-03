@@ -51,20 +51,25 @@ submitButton.addEventListener('click', function(){
   } else {
     document.querySelector(".span--high-low-2").innerText = "BOOM!";
   }
+
+  if (document.querySelector(".article__form__input--guessOne").value === "" && document.querySelector(".article__form__input--guessTwo").value === "" && document.querySelector(".article__form__input--nameOne").value === "" && document.querySelector(".article__form__input--nameTwo").value === "") {
+  clearButton.disabled = true;
+  } else {
+  clearButton.disabled = false;
+  }
 })
 
 // Clear Challenger Names and Guesses
 var clearButton = document.querySelector(".article__div__button--clear");
-
-if (document.querySelector(".article__form__input--guessOne").value === "" && document.querySelector(".article__form__input--guessTwo").value === "" && document.querySelector(".article__form__input--nameOne").value === "" && document.querySelector(".article__form__input--nameTwo").value === "") {
-  clearButton.disabled = true;
-} else {
-  clearButton.disabled = false;
-}
 
 clearButton.addEventListener('click', function(){
   document.querySelector(".article__form__input--nameOne").value = "";
   document.querySelector(".article__form__input--nameTwo").value = "";
   document.querySelector(".article__form__input--guessOne").value = "";
   document.querySelector(".article__form__input--guessTwo").value = "";
+  document.querySelector(".span--high-low-1").innerText = "";
+  document.querySelector(".span--high-low-2").innerText = "";  
+  document.querySelector(".span--number-1").innerText = "";  
+  document.querySelector(".span--number-2").innerText = "";  
+  clearButton.disabled = true;
 })
