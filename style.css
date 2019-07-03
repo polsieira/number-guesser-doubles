@@ -216,6 +216,7 @@ body {
     color: var(--grey);
     font-size: 14px;
     font-weight: bold;
+    text-align: center;
   }
 
   .header-for-winner-card {
