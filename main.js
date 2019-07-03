@@ -6,6 +6,7 @@ function getRandInt(min, max) {
 }
 
 var updateButton = document.querySelector(".article__form__button--update");
+var randInt = null;
 
 updateButton.addEventListener('click', function(){ 
   var min = parseInt(document.querySelector(".article__form__input--min-range").value);
@@ -14,11 +15,10 @@ updateButton.addEventListener('click', function(){
   document.querySelector(".bold--max").innerText = max;
   document.querySelector(".article__form__input--min-range").value = "";
   document.querySelector(".article__form__input--max-range").value = "";
-  console.log("min = " + min)
-  console.log("max = " + max)
-  var randInt = getRandInt(min, max);
-  console.log("random = " + randInt)
+  randInt = getRandInt(min, max);
 })
+
+console.log("random = " + randInt)
 
 // Populate Challenger names and guesses
 var submitButton = document.querySelector(".article__div__button--submit");
@@ -38,4 +38,20 @@ submitButton.addEventListener('click', function(){
   document.querySelector(".article__form__input--nameTwo").value = "";
   document.querySelector(".article__form__input--guessOne").value = "";
   document.querySelector(".article__form__input--guessTwo").value = "";
+
+  if (guessOne > randInt) {
+    document.querySelector(".span--high-low-1").innerText = "that's too high";
+  } else if (guessOne < randInt) {
+    document.querySelector(".span--high-low-1").innerText = "that's too low";
+  } else {
+    document.querySelector(".span--high-low-1").innerText = "BOOM!";
+  }
+
+  if (guessTwo > randInt) {
+    document.querySelector(".span--high-low-2").innerText = "that's too high";
+  } else if (guessTwo < randInt) {
+    document.querySelector(".span--high-low-2").innerText = "that's too low";
+  } else {
+    document.querySelector(".span--high-low-2").innerText = "BOOM!";
+  }
 })
