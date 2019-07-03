@@ -20,7 +20,7 @@ updateButton.addEventListener('click', function(){
 
 console.log("random = " + randInt)
 
-// Populate Challenger names and guesses
+// Populate Challenger Names and Guesses
 var submitButton = document.querySelector(".article__div__button--submit");
 
 submitButton.addEventListener('click', function(){
@@ -34,10 +34,7 @@ submitButton.addEventListener('click', function(){
   document.querySelector(".span--challenger-2").innerText = challengerTwo;
   document.querySelector(".span--number-1").innerText = guessOne;
   document.querySelector(".span--number-2").innerText = guessTwo;  
-  document.querySelector(".article__form__input--nameOne").value = "";
-  document.querySelector(".article__form__input--nameTwo").value = "";
-  document.querySelector(".article__form__input--guessOne").value = "";
-  document.querySelector(".article__form__input--guessTwo").value = "";
+
 
   if (guessOne > randInt) {
     document.querySelector(".span--high-low-1").innerText = "that's too high";
@@ -54,4 +51,20 @@ submitButton.addEventListener('click', function(){
   } else {
     document.querySelector(".span--high-low-2").innerText = "BOOM!";
   }
+})
+
+// Clear Challenger Names and Guesses
+var clearButton = document.querySelector(".article__div__button--clear");
+
+if (document.querySelector(".article__form__input--guessOne").value === "" && document.querySelector(".article__form__input--guessTwo").value === "" && document.querySelector(".article__form__input--nameOne").value === "" && document.querySelector(".article__form__input--nameTwo").value === "") {
+  clearButton.disabled = true;
+} else {
+  clearButton.disabled = false;
+}
+
+clearButton.addEventListener('click', function(){
+  document.querySelector(".article__form__input--nameOne").value = "";
+  document.querySelector(".article__form__input--nameTwo").value = "";
+  document.querySelector(".article__form__input--guessOne").value = "";
+  document.querySelector(".article__form__input--guessTwo").value = "";
 })
