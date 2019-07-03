@@ -7,9 +7,9 @@ function getRandInt(min, max) {
 }
 
 // Default random number in case user doesn't choose range
-var min_default = 1;
-var max_default = 100;
-var randInt = getRandInt(min_default, max_default);
+var min = 1;
+var max = 100;
+var randInt = getRandInt(min, max);
 
 var updateButton = document.querySelector(".article__form__button--update");
 
@@ -43,9 +43,12 @@ submitButton.addEventListener('click', function(){
   document.querySelector(".span__challenger2-name").innerText = challengerTwo;
   document.querySelector(".span--number-1").innerText = guessOne;
   document.querySelector(".span--number-2").innerText = guessTwo;  
+  // Increment nGuesses
+  nGuesses ++;
+  console.log(nGuesses)
   // Populate message
   if (guessOne > randInt) {
-    document.querySelector(".span--high-low-1").innerText = "that'swq too high";
+    document.querySelector(".span--high-low-1").innerText = "that's too high";
   } else if (guessOne < randInt) {
     document.querySelector(".span--high-low-1").innerText = "that's too low";
   } else {
@@ -63,9 +66,14 @@ submitButton.addEventListener('click', function(){
   }
   // Enable disable button
   if (document.querySelector(".article__form__input--guessOne").value === "" && document.querySelector(".article__form__input--guessTwo").value === "" && document.querySelector(".article__form__input--nameOne").value === "" && document.querySelector(".article__form__input--nameTwo").value === "") {
-  clearButton.disabled = true;
+    clearButton.disabled = true;
   } else {
-  clearButton.disabled = false;
+    clearButton.disabled = false;
+  // Enable restart button
+  if (nGuesses >= 1) {
+    restartButton.disabled = false;
+  }
+
   }
 })
 
@@ -89,6 +97,17 @@ function clearLatestGuess() {
 clearButton.addEventListener('click', function(){
   clearForm();
   clearLatestGuess();
+  clearButton.disabled = true;
+})
+// Restart Game Button
+var restartButton = document.querySelector(".article__div__button--restart");
+
+restartButton.addEventListener('click', function(){
+  clearForm();
+  clearLatestGuess();
+  nGuesses = 0;
+  randInt = getRandInt(min, max);
+  restartButton.disabled = true;
   clearButton.disabled = true;
 })
 
