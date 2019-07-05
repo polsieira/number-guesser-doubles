@@ -42,11 +42,24 @@ submitButton.addEventListener('click', function(){
   document.querySelector(".span__challenger1-name").innerText = challengerOne;
   document.querySelector(".span__challenger2-name").innerText = challengerTwo;
   document.querySelector(".span--number-1").innerText = guessOne;
-  document.querySelector(".span--number-2").innerText = guessTwo;  
+  document.querySelector(".span--number-2").innerText = guessTwo; 
+  //Start timer
+  if (nGuesses === 0) {
+    timer = 0;
+    timerId = setInterval(function() {timer++;}, 1000);
+  } 
   // Increment nGuesses
   nGuesses ++;
   console.log(nGuesses)
   // Populate message
+function makeCard(winner) {
+  document.querySelector('.winning-challenger-name').innerText = winner;
+  document.querySelector('.total-number-guesses').innerText = nGuesses;
+  nGuesses = 0;
+  document.querySelector('.total-time-spent').innerText = (timer / 60).toFixed(2);
+  clearInterval(timerId);
+}
+
   if (guessOne > randInt) {
     document.querySelector(".span--high-low-1").innerText = "that's too high";
   } else if (guessOne < randInt) {
@@ -54,6 +67,7 @@ submitButton.addEventListener('click', function(){
   } else {
     document.querySelector(".span--high-low-1").innerText = "BOOM!";
     clearForm();
+    makeCard(challengerOne);
   }
 
   if (guessTwo > randInt) {
@@ -63,6 +77,7 @@ submitButton.addEventListener('click', function(){
   } else {
     document.querySelector(".span--high-low-2").innerText = "BOOM!"
     clearForm();
+    makeCard(challengerTwo);
   }
   // Enable disable button
   if (document.querySelector(".article__form__input--guessOne").value === "" && document.querySelector(".article__form__input--guessTwo").value === "" && document.querySelector(".article__form__input--nameOne").value === "" && document.querySelector(".article__form__input--nameTwo").value === "") {
@@ -110,4 +125,6 @@ restartButton.addEventListener('click', function(){
   restartButton.disabled = true;
   clearButton.disabled = true;
 })
+
+
 
