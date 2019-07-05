@@ -54,7 +54,7 @@ submitButton.addEventListener('click', function(){
   // Populate message
 function makeCard(winner) {
   document.querySelector('.winning-challenger-name').innerText = winner.toUpperCase();
-  document.querySelector('.total-number-guesses').innerText = nGuesses;
+  document.querySelector('.total-number-guesses').innerText = nGuesses * 2;
   nGuesses = 0;
   document.querySelector('.total-time-spent').innerText = (timer / 60).toFixed(2);
   clearInterval(timerId);
