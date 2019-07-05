@@ -55,6 +55,14 @@ function clearLatestGuess() {
   document.querySelector(".span--number-2").innerText = "";  
 }
 
+function clearName() {
+  document.querySelector(".article__paragraph--challenger-1").innerText = "Challenger 1";
+  document.querySelector(".article__paragraph--challenger-2").innerText = "Challenger 2";
+  document.querySelector(".span--challenger-1").innerText = "Challenger 1";
+  document.querySelector(".span--challenger-2").innerText = "Challenger 2";  
+}
+
+
 // Event Listeners
 updateButton.addEventListener('click', function(){ 
   var min = parseInt(document.querySelector(".article__form__input--min-range").value);
@@ -123,6 +131,7 @@ clearButton.addEventListener('click', function(){
 restartButton.addEventListener('click', function(){
   clearForm();
   clearLatestGuess();
+  clearName();
   nGuesses = 0;
   randInt = getRandInt(min, max);
   restartButton.disabled = true;
