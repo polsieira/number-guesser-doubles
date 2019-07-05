@@ -125,10 +125,11 @@ body {
 }
 .button--styles {
   border-radius: 25px;
-  font-family: 'Open Sans', sans-serif;
-  height: 26px;
-  font-weight: bold;
   color: white; 
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  height: 26px;
 }
 .button--styles:focus{
  border-color:transparent!important;
@@ -214,13 +215,13 @@ body {
   .span__challenger1-name,
   .span__challenger2-name {
     color: var(--grey);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
   }
 
   .header-for-winner-card {
-    align-items: center;
+    align-items: top;
     border-bottom: 2px solid var(--light-grey);
     color: var(--grey);
     display: flex;
@@ -275,6 +276,10 @@ body {
     margin: 5px 0px 5px 0px;
     text-align: center;
     width: 28px;
+  }
+
+  .versus {
+    font-size: 12px;
   }
 
 /*Media Queries*/

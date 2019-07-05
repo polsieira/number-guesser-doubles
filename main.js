@@ -39,8 +39,8 @@ submitButton.addEventListener('click', function(){
   document.querySelector(".article__paragraph--challenger-2").innerText = challengerTwo;
   document.querySelector(".span--challenger-1").innerText = challengerOne;
   document.querySelector(".span--challenger-2").innerText = challengerTwo;
-  document.querySelector(".span__challenger1-name").innerText = challengerOne;
-  document.querySelector(".span__challenger2-name").innerText = challengerTwo;
+  document.querySelector(".span__challenger1-name").innerText = challengerOne.toUpperCase();
+  document.querySelector(".span__challenger2-name").innerText = challengerTwo.toUpperCase();
   document.querySelector(".span--number-1").innerText = guessOne;
   document.querySelector(".span--number-2").innerText = guessTwo; 
   //Start timer
@@ -53,7 +53,7 @@ submitButton.addEventListener('click', function(){
   console.log(nGuesses)
   // Populate message
 function makeCard(winner) {
-  document.querySelector('.winning-challenger-name').innerText = winner;
+  document.querySelector('.winning-challenger-name').innerText = winner.toUpperCase();
   document.querySelector('.total-number-guesses').innerText = nGuesses;
   nGuesses = 0;
   document.querySelector('.total-time-spent').innerText = (timer / 60).toFixed(2);
