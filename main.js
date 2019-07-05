@@ -39,8 +39,8 @@ submitButton.addEventListener('click', function(){
   document.querySelector(".article__paragraph--challenger-2").innerText = challengerTwo;
   document.querySelector(".span--challenger-1").innerText = challengerOne;
   document.querySelector(".span--challenger-2").innerText = challengerTwo;
-  document.querySelector(".span__challenger1-name").innerText = challengerOne.toUpperCase();
-  document.querySelector(".span__challenger2-name").innerText = challengerTwo.toUpperCase();
+  // document.querySelector(".span__challenger1-name").innerText = challengerOne.toUpperCase();
+  // document.querySelector(".span__challenger2-name").innerText = challengerTwo.toUpperCase();
   document.querySelector(".span--number-1").innerText = guessOne;
   document.querySelector(".span--number-2").innerText = guessTwo; 
   //Start timer
@@ -53,13 +53,33 @@ submitButton.addEventListener('click', function(){
   console.log(nGuesses)
   // Populate message
 function makeCard(winner) {
-  document.querySelector('.winning-challenger-name').innerText = winner.toUpperCase();
-  document.querySelector('.total-number-guesses').innerText = nGuesses * 2;
-  nGuesses = 0;
-  document.querySelector('.total-time-spent').innerText = (timer / 60).toFixed(2);
-  clearInterval(timerId);
-  document.querySelector('.article-winner-card').classList.remove('hidden');
+  document.querySelector('.section--right').insertAdjacentHTML('afterbegin', `<article class="article-winner-card">
+        <p class="header-for-winner-card">
+           <span class="span__challenger1-name">${challengerOne.toUpperCase()}</span> 
+              <span class="versus">VS</span>
+          <span class="span__challenger2-name">${challengerTwo.toUpperCase()}</span></p>
+      <div class="article__div__winner-card">
+        <p class="challenge-winner">
+          <span class="winning-challenger-name">${winner}</span><br/>
+          WINNER
+        </p>
+      </div>
+      <div class="bottom-data-line">
+        <p class="bottom-data-line-paragraph"><span class="total-number-guesses">${nGuesses *2}</span> guesses</p>
+        <p class="bottom-data-line-paragraph"><span class="total-time-spent"> ${(timer / 60).toFixed(2)}</span> minutes</p>
+      <button type="button" class="winner-card-close-button">&times;</button>
+    </div>
+  </article>`);
+
+  // document.querySelector('.winning-challenger-name').innerText = winner.toUpperCase();
+  // document.querySelector('.total-number-guesses').innerText = nGuesses * 2;
+  // nGuesses = 0;
+  // document.querySelector('.total-time-spent').innerText = (timer / 60).toFixed(2);
+  // clearInterval(timerId);
+  // document.querySelector('.article-winner-card').classList.remove('hidden');
 }
+
+
 
   if (guessOne > randInt) {
     document.querySelector(".span--high-low-1").innerText = "that's too high";
