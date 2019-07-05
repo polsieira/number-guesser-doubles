@@ -282,6 +282,10 @@ body {
     font-size: 12px;
   }
 
+  .hidden {
+    visibility: hidden;
+  }
+
 /*Media Queries*/
 @media only screen and (max-width: 600px) {
 

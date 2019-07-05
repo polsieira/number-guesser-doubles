@@ -58,6 +58,7 @@ function makeCard(winner) {
   nGuesses = 0;
   document.querySelector('.total-time-spent').innerText = (timer / 60).toFixed(2);
   clearInterval(timerId);
+  document.querySelector('.article-winner-card').classList.remove('hidden');
 }
 
   if (guessOne > randInt) {
