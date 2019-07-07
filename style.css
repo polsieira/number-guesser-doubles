@@ -364,11 +364,42 @@ body {
   margin-right: 180px;
   margin-top: 15px;
 }
-
 .article__div__button {
  width: 100%;
  margin: 5px auto;
 }
+.article__div--latest-score {
+  display: block;
+}
+.article__div--right,
+.article__div--left {
+  width: 100%
+}
+.article__div--left:after{
+ content: "";
+ display: block;
+ margin: 0 auto;
+ width: 75%;
+ padding-top: 5px;
+ border-bottom: 1px solid var(--light-grey);
+}
+
+.header-for-winner-card {
+    border-bottom: 2px solid var(--light-grey);
+    color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+   /* justify-content: space-around;*/
+    margin: 4px auto 4px auto;
+    width: 90%;
+  }
+
+  .versus {
+    font-size: 10px;
+    text-align: center;
+  }
+
 
 }
 
