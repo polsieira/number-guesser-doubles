@@ -23,6 +23,12 @@ var latestGuessOne = document.querySelector(".span--number-1");
 var latestGuessTwo = document.querySelector(".span--number-2");
 var guessMessageOne = document.querySelector(".span--high-low-1");
 var guessMessageTwo = document.querySelector(".span--high-low-2");
+var minErrorMessage = document.querySelector(".min-error-message");
+var maxErrorMessage = document.querySelector(".max-error-message");
+var nameOneErrorMessage = document.querySelector("nameone-error-message");
+var nameTwoErrorMessage = document.querySelector(".nametwo-error-message");
+var guessOneErrorMessage = document.querySelector(".guessone-error-message");
+var guessTwoErrorMessage = document.querySelector(".guesstwo-error-message");
 
 // Event Listeners
 updateButton.addEventListener('click', onUpdateButton);
@@ -40,36 +46,38 @@ function onUpdateButton() {
 }
 
 function onSubmitButton() {
-  checkInput(challengerOneInput);
-  checkInput(challengerTwoInput);
-  updateGuess();
-  updateName();
-  updateLatestGuess();
-  setTimer();
-  nGuesses ++;
+  // checkInput(challengerOneInput);
+  // checkInput(challengerTwoInput);
+  if (checkGuessInput(guessOneInput, guessOneErrorMessage) && checkGuessInput(guessTwoInput, guessTwoErrorMessage)) {
+    updateGuess();
+    updateName();
+    updateLatestGuess();
+    setTimer();
+    nGuesses ++;
 
-  if (guessOne > randInt) {
-    guessMessageOne.innerText = "that's too high";
-  } else if (guessOne < randInt) {
-    guessMessageOne.innerText = "that's too low";
-  } else {
-    guessMessageOne.innerText = "BOOM!";
-    makeCard(challengerOneInput.value);
-    clearForm();    
+    if (guessOne > randInt) {
+      guessMessageOne.innerText = "that's too high";
+    } else if (guessOne < randInt) {
+      guessMessageOne.innerText = "that's too low";
+    } else {
+      guessMessageOne.innerText = "BOOM!";
+      makeCard(challengerOneInput.value);
+      clearForm();    
+    }
+
+    if (guessTwo > randInt) {
+      guessMessageTwo.innerText = "that's too high";
+    } else if (guessTwo < randInt) {
+      guessMessageTwo.innerText = "that's too low";
+    } else {
+      guessMessageTwo.innerText = "BOOM!"
+      makeCard(challengerTwoInput.value);
+      clearForm();    
+    }
+
+    enableClearButton();
+    enableRestartButton();
   }
-
-  if (guessTwo > randInt) {
-    guessMessageTwo.innerText = "that's too high";
-  } else if (guessTwo < randInt) {
-    guessMessageTwo.innerText = "that's too low";
-  } else {
-    guessMessageTwo.innerText = "BOOM!"
-    makeCard(challengerTwoInput.value);
-    clearForm();    
-  }
-
-  enableClearButton();
-  enableRestartButton();
 }
 
 function onClearButton() {
@@ -191,7 +199,14 @@ function makeCard(winner) {
   </article>`);
 }
 
-
+function checkGuessInput(input, errorMessage) {
+  if (input.value < min || input.value > max){
+      errorMessage.classList.remove("error--hidden");
+      return false;
+  } else {
+    return true;
+  }
+}
 
 
 

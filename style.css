@@ -94,7 +94,6 @@ body {
   width: 90%
 }
 .article__form {
-  align-items: flex-end;
   display: flex;
   justify-content: space-between;
   margin: 0px auto 20px auto;
@@ -124,6 +123,9 @@ body {
 }
 .article__form__button {
   width: 28%;
+}
+.article__form__button--update {
+  margin-top: 20px;
 }
 .button--styles {
   border-radius: 25px;
@@ -284,6 +286,20 @@ body {
     font-size: 12px;
   }
 
+.error--styles {
+  height: 10px;
+  color: var(--hot-pink);
+  font-size: 14px;
+}
+
+.error-image {
+  width: 12px;
+  height: 12px;
+}
+
+.error--hidden {
+  visibility: hidden;
+}
 
 
 /*Media Queries*/
