@@ -7,6 +7,8 @@ var updateButton = document.querySelector(".article__form__button--update");
 var submitButton = document.querySelector(".article__div__button--submit");
 var clearButton = document.querySelector(".article__div__button--clear");
 var restartButton = document.querySelector(".article__div__button--restart");
+// var nameInputOne = document.querySelector('.article__form__input--nameOne');
+// var nameInputTwo = document.querySelector('.article__form__input--nameTwo');
 
 
 // Functions 
@@ -62,6 +64,17 @@ function clearName() {
   document.querySelector(".span--challenger-2").innerText = "Challenger 2";  
 }
 
+function checkInput(elementValue) {
+  var letters = /[0-9a-zA-Z]/;
+  // var nameOneInput = document.querySelector('.article__form__input--nameOne');
+  // var nameTwoInput = document.querySelector('.article__form__input--nameTwo');
+  if (elementValue.match(letters)){
+    return true;
+  } else {
+    alert('Enter a name');
+    return false;
+  }
+}
 
 // Event Listeners
 updateButton.addEventListener('click', function(){ 
@@ -79,7 +92,9 @@ console.log("random = " + randInt)
 submitButton.addEventListener('click', function(){
   // Populate Names and Guesses
   challengerOne = document.querySelector(".article__form__input--nameOne").value;
+  checkInput(challengerOne);
   challengerTwo = document.querySelector(".article__form__input--nameTwo").value;
+  checkInput(challengerTwo);
   guessOne = Math.round(parseInt(document.querySelector(".article__form__input--guessOne").value));
   guessTwo = Math.round(parseInt(document.querySelector(".article__form__input--guessTwo").value));
   document.querySelector(".article__paragraph--challenger-1").innerText = challengerOne;
