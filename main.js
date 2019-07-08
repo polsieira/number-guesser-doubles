@@ -62,6 +62,13 @@ function clearName() {
   document.querySelector(".span--challenger-2").innerText = "Challenger 2";  
 }
 
+function resetRange() {
+  document.querySelector(".bold--min").innerText = 1;
+  document.querySelector(".bold--max").innerText = 100;  
+  min = 1;
+  max = 100;
+}
+
 
 // Event Listeners
 updateButton.addEventListener('click', function(){ 
@@ -95,7 +102,7 @@ submitButton.addEventListener('click', function(){
     document.querySelector(".span--high-low-1").innerText = "that's too high";
   } else if (guessOne < randInt) {
     document.querySelector(".span--high-low-1").innerText = "that's too low";
-  } else {
+  } else if (guessOne === randInt) {
     document.querySelector(".span--high-low-1").innerText = "BOOM!";
     clearForm();
     makeCard(challengerOne);
@@ -105,7 +112,7 @@ submitButton.addEventListener('click', function(){
     document.querySelector(".span--high-low-2").innerText = "that's too high";
   } else if (guessTwo < randInt) {
     document.querySelector(".span--high-low-2").innerText = "that's too low";
-  } else {
+  } else if (guessTwo === randInt) {
     document.querySelector(".span--high-low-2").innerText = "BOOM!"
     clearForm();
     makeCard(challengerTwo);
