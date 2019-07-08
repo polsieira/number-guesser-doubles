@@ -13,8 +13,8 @@ var clearButton = document.querySelector(".article__div__button--clear");
 var restartButton = document.querySelector(".article__div__button--restart");
 var challengerOneInput = document.querySelector(".article__form__input--nameOne");
 var challengerTwoInput = document.querySelector(".article__form__input--nameTwo");
-var challengerOneText = document.querySelector(".article__paragraph--challenger-1");
-var challengerTwoText = document.querySelector(".article__paragraph--challenger-2");
+var challengerOneLabel = document.querySelector(".article__paragraph--challenger-1");
+var challengerTwoLabel = document.querySelector(".article__paragraph--challenger-2");
 var challengerOneLatestGuess = document.querySelector(".span--challenger-1");
 var challengerTwoLatestGuess = document.querySelector(".span--challenger-2");
 var guessOneInput = document.querySelector(".article__form__input--guessOne");
@@ -125,8 +125,8 @@ function clearLatestGuess() {
 }
 
 function clearName() {
-  challengerOneText.innerText = "Challenger 1";
-  challengerTwoText.innerText = "Challenger 2";
+  challengerOneLabel.innerText = "Challenger 1";
+  challengerTwoLabel.innerText = "Challenger 2";
   challengerOneLatestGuess.innerText = "Challenger 1";
   challengerTwoLatestGuess.innerText = "Challenger 2";  
 }
@@ -146,8 +146,8 @@ function updateRange() {
 }
 
 function updateName() {
-  challengerOneText.innerText = challengerOneInput.value;
-  challengerTwoText.innerText = challengerTwoInput.value;  
+  challengerOneLabel.innerText = challengerOneInput.value;
+  challengerTwoLabel.innerText = challengerTwoInput.value;  
   challengerOneLatestGuess.innerText = challengerOneInput.value;
   challengerTwoLatestGuess.innerText = challengerTwoInput.value;
 }
@@ -172,8 +172,8 @@ function enableRestartButton() {
 }
 
 function makeCard(winner) {
-  document.querySelector('.section--right').insertAdjacentHTML('afterbegin', `<article class="article-winner-card">
-        <p class="header-for-winner-card">
+  document.querySelector('.section--right').insertAdjacentHTML('afterbegin', `<article class="article--winner-card">
+        <p class="header--winner-card">
            <span class="span__challenger1-name">${challengerOneInput.value.toUpperCase()}</span> 
               <span class="versus">VS</span>
           <span class="span__challenger2-name">${challengerTwoInput.value.toUpperCase()}</span></p>
