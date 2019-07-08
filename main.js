@@ -66,8 +66,6 @@ function clearName() {
 
 function checkInput(elementValue) {
   var letters = /[0-9a-zA-Z]/;
-  // var nameOneInput = document.querySelector('.article__form__input--nameOne');
-  // var nameTwoInput = document.querySelector('.article__form__input--nameTwo');
   if (elementValue.match(letters)){
     return true;
   } else {
@@ -75,6 +73,7 @@ function checkInput(elementValue) {
     return false;
   }
 }
+
 
 // Event Listeners
 updateButton.addEventListener('click', function(){ 
