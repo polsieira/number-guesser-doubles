@@ -390,7 +390,6 @@ body {
     display: flex;
     flex-direction: column;
     font-weight: 300;
-   /* justify-content: space-around;*/
     margin: 4px auto 4px auto;
     width: 90%;
   }
