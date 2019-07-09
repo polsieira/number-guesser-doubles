@@ -47,29 +47,8 @@ function onSubmitButton() {
   updateLatestGuess();
   setTimer();
   nGuesses ++;
-
-  if (guessOne > randInt) {
-    guessMessageOne.innerText = "that's too high";
-  } else if (guessOne < randInt) {
-    guessMessageOne.innerText = "that's too low";
-  } else if (guessOne === randInt) {
-    guessMessageOne.innerText = "BOOM!";
-    makeCard(challengerOneInput.value);
-    clearForm();
-    randInt = getRandInt(min, max);    
-  }
-
-  if (guessTwo > randInt) {
-    guessMessageTwo.innerText = "that's too high";
-  } else if (guessTwo < randInt) {
-    guessMessageTwo.innerText = "that's too low";
-  } else if (guessTwo === randInt) {
-    guessMessageTwo.innerText = "BOOM!"
-    makeCard(challengerTwoInput.value);
-    clearForm(); 
-    randInt = getRandInt(min, max);   
-  }
-
+  checkGuess(guessOne, guessMessageOne, challengerOneInput);
+  checkGuess(guessTwo, guessMessageTwo, challengerTwoInput);
   enableClearButton();
   enableRestartButton();
 }
@@ -109,6 +88,20 @@ function checkInput(elementValue) {
     alert('Enter a name');
     return false;
   }
+}
+
+function checkGuess(guess, message, challenger) {
+  if (guess > randInt) {
+    message.innerText = "that's too high";
+  } else if (guess < randInt) {
+    message.innerText = "that's too low";
+  } else if (guess === randInt) {
+    message.innerText = "BOOM!"
+    makeCard(challenger.value);
+    clearForm(); 
+    clearLatestGuess();
+    randInt = getRandInt(min, max);   
+  }  
 }
 
 function clearForm() {
