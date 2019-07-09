@@ -109,26 +109,43 @@ function checkInput(elementValue) {
   }
 }
 
+<<<<<<< Updated upstream
+=======
+function checkGuess(guess, message, challenger) {
+  if (guess > randInt) {
+    message.innerText = 'that\'s too high';
+  } else if (guess < randInt) {
+    message.innerText = 'that\'s too low';
+  } else if (guess === randInt) {
+    message.innerText = 'BOOM!'
+    makeCard(challenger.value);
+    clearForm(); 
+    clearLatestGuess();
+    randInt = getRandInt(min, max);   
+  }  
+}
+
+>>>>>>> Stashed changes
 function clearForm() {
-  challengerOneInput.value = "";
-  challengerTwoInput.value = "";
-  guessOneInput.value = "";
-  guessTwoInput.value = "";
+  challengerOneInput.value = '';
+  challengerTwoInput.value = '';
+  guessOneInput.value = '';
+  guessTwoInput.value = '';
 }
 
 function clearLatestGuess() {
-  guessMessageOne.innerText = "";
-  guessMessageTwo.innerText = "";  
-  latestGuessOne.innerText = "";  
-  latestGuessTwo.innerText = "";
+  guessMessageOne.innerText = '';
+  guessMessageTwo.innerText = '';  
+  latestGuessOne.innerText = '';  
+  latestGuessTwo.innerText = '';
   nGuesses = 0;  
 }
 
 function clearName() {
-  challengerOneLabel.innerText = "Challenger 1";
-  challengerTwoLabel.innerText = "Challenger 2";
-  challengerOneLatestGuess.innerText = "Challenger 1";
-  challengerTwoLatestGuess.innerText = "Challenger 2";  
+  challengerOneLabel.innerText = 'Challenger 1';
+  challengerTwoLabel.innerText = 'Challenger 2';
+  challengerOneLatestGuess.innerText = 'Challenger 1';
+  challengerTwoLatestGuess.innerText = 'Challenger 2';  
 }
 
 function updateGuess() {
@@ -158,7 +175,7 @@ function updateLatestGuess() {
 }
 
 function enableClearButton() {
-  if (guessOneInput.value === "" && guessTwoInput.value === "" && challengerOneInput.value === "" && challengerTwoInput.value === "") {
+  if (guessOneInput.value === '' && guessTwoInput.value === '' && challengerOneInput.value === '' && challengerTwoInput.value === '') {
     clearButton.disabled = true;
   } else {
     clearButton.disabled = false;  
