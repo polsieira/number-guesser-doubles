@@ -276,26 +276,12 @@ body {
 
 /*Media Queries*/
 @media only screen and (max-width: 650px) {
-  .section {
-    width: 100%;
-  }
   .main {
     display: block;
-  }
-  .header__heading {
-    font-size: 36px;
-    width: 85%;
-    margin-top: 4px;
-    text-align: center;
-  }
-  .header__paragraph {
-    font-size: 16px;
-  }
-  .article-winner-card {
-    width: 95%;
-  }
-
-@media only screen and (max-width: 650px) {
+  }  
+  .section {
+    width: 100%;
+  }  
   .header {
     height: 75px;
     overflow: hidden;
