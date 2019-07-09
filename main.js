@@ -37,7 +37,7 @@ restartButton.addEventListener('click', onRestartButton);
 
 // Functions 
 function onUpdateButton() {
-  updateRange();
+  updateRange(parseInt(minInput.value), parseInt(maxInput.value));
   randInt = getRandInt(min, max);
 }
 
@@ -100,7 +100,8 @@ function checkGuess(guess, message, challenger) {
     message.innerText = 'BOOM!';
     makeCard(challenger.value);
     clearForm(); 
-    clearLatestGuess();
+    increaseRange();
+    nGuesses = 0;
     randInt = getRandInt(min, max);   
   }  
 }
@@ -133,9 +134,9 @@ function updateGuess() {
   nGuesses ++;
 }
 
-function updateRange() {
-  min = parseInt(minInput.value);
-  max = parseInt(maxInput.value);
+function updateRange(newMin, newMax) {
+  min = newMin;
+  max = newMax;
   minDisplay.innerText = min;
   maxDisplay.innerText = max;
   minInput.value = '';
@@ -188,6 +189,11 @@ function makeCard(winner) {
   </article>`);
 }
 
+function increaseRange() {
+  min > 10 ? min -= 10 : min = min ;
+  max += 10;
+  updateRange(min, max);
+}
 
 
 
