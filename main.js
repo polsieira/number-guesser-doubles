@@ -46,21 +46,32 @@ rightSection.addEventListener('click', rightHandler);
 
 // Functions 
 function onUpdateButton() {
-  updateRange(parseInt(minInput.value), parseInt(maxInput.value));
-  randInt = getRandInt(min, max);
+  min = minInput.value;
+  max = maxInput.value;  
+  var minCheck = verifyRange(minInput, minErrorMessage);
+  var maxCheck = verifyRange(maxInput, maxErrorMessage);
+  if (minCheck && maxCheck) {
+    updateRange(parseInt(min), parseInt(max));
+    randInt = getRandInt(min, max);
+  }
+  
 }
 
 function onSubmitButton() {
-  checkInput(challengerOneInput);
-  checkInput(challengerTwoInput);
-  setTimer();  
-  updateGuess();
-  updateName();
-  updateLatestGuess();
-  checkGuess(guessOne, guessMessageOne, challengerOneInput);
-  checkGuess(guessTwo, guessMessageTwo, challengerTwoInput);
-  enableClearButton();
-  enableRestartButton();
+  checkNameOne = checkGuessInput(guessOneInput, guessOneErrorMessage);
+  checkNameTwo = checkGuessInput(guessTwoInput, guessTwoErrorMessage);
+  // checkInput(challengerOneInput);
+  // checkInput(challengerTwoInput);
+  if (checkNameOne) {
+    setTimer();  
+    updateGuess();
+    updateName();
+    updateLatestGuess();
+    checkGuess(guessOne, guessMessageOne, challengerOneInput);
+    checkGuess(guessTwo, guessMessageTwo, challengerTwoInput);
+    enableClearButton();
+    enableRestartButton();
+  }  
 }
 
 function onClearButton() {
@@ -149,9 +160,7 @@ function updateGuess() {
   nGuesses ++;
 }
 
-function updateRange(newMin, newMax) {
-  min = newMin;
-  max = newMax;
+function updateRange(min, max) {
   minDisplay.innerText = min;
   maxDisplay.innerText = max;
   minInput.value = '';
@@ -207,9 +216,13 @@ function makeCard(winner) {
 
 function checkGuessInput(input, errorMessage) {
   if (input.value < min || input.value > max){
-      errorMessage.classList.remove("error--hidden");
-      return false;
+    errorMessage.classList.remove("error--hidden");
+    input.classList.add("error-border-styles");
+    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a value in specified range`;
+    return false;
   } else {
+    errorMessage.classList.add("error--hidden");
+    input.classList.remove("error-border-styles");
     return true;
   }
 }
@@ -218,6 +231,19 @@ function increaseRange() {
   min > 10 ? min -= 10 : min = 1 ;
   max += 10;
   updateRange(min, max);
+}
+
+function verifyRange(input, errorMessage) {
+  if (min > max) {
+      errorMessage.classList.remove("error--hidden");
+      input.classList.add("error-border-styles");
+      errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Minimum cannot be higher than maximum`;
+      return false;
+  } else {
+    errorMessage.classList.add("error--hidden");
+    input.classList.remove("error-border-styles");
+    return true;
+  }
 }
 
 
