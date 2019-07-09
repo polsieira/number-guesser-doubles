@@ -207,7 +207,7 @@ body {
   background-color: var(--grey);
 }
 /*Winner Cards*/
-.article-winner-card {
+.article--winner-card {
   background-color: #ffffff;
   border: var(--light-grey) 1.5px solid;
   margin: 20px auto 0px auto;
@@ -222,7 +222,7 @@ body {
     text-align: center;
   }
 
-  .header-for-winner-card {
+  .header--winner-card {
     align-items: top;
     border-bottom: 2px solid var(--light-grey);
     color: var(--grey);
@@ -395,7 +395,7 @@ body {
  border-bottom: 1px solid var(--light-grey);
 }
 
-.header-for-winner-card {
+.header--winner-card {
     border-bottom: 2px solid var(--light-grey);
     color: var(--grey);
     display: flex;
