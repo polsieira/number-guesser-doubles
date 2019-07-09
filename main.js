@@ -46,7 +46,6 @@ function onSubmitButton() {
   updateName();
   updateLatestGuess();
   setTimer();
-  nGuesses ++;
   checkGuess(guessOne, guessMessageOne, challengerOneInput);
   checkGuess(guessTwo, guessMessageTwo, challengerTwoInput);
   enableClearButton();
@@ -129,6 +128,7 @@ function clearName() {
 function updateGuess() {
   guessOne = Math.round(parseInt(guessOneInput.value));
   guessTwo = Math.round(parseInt(guessTwoInput.value));
+  nGuesses ++;
 }
 
 function updateRange() {
