@@ -2,6 +2,7 @@
 var min = 1;
 var max = 100;
 var nGuesses = 0;
+var cardIndex = 0;
 var randInt = getRandInt(min, max);
 var minInput = document.querySelector('.article__form__input--min-range');
 var maxInput = document.querySelector('.article__form__input--max-range');
@@ -34,6 +35,8 @@ submitButton.addEventListener('click', onSubmitButton);
 clearButton.addEventListener('click', onClearButton);
 
 restartButton.addEventListener('click', onRestartButton);
+
+rightSection.addEventListener('click', rightHandler);
 
 // Functions 
 function onUpdateButton() {
@@ -69,6 +72,12 @@ function onRestartButton() {
   clearButton.disabled = true;  
 }
 
+function rightHandler(event) {
+  if (event.target.classList[0] === 'winner-card-close-button') {
+    var WinnerCard = event.target.parentNode.parentNode; 
+    rightSection.removeChild(WinnerCard);
+  }
+}
 
 function getRandInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -170,7 +179,8 @@ function enableRestartButton() {
 }
 
 function makeCard(winner) {
-  rightSection.insertAdjacentHTML("afterbegin", `<article class="article--winner-card">
+  cardIndex ++;
+  rightSection.insertAdjacentHTML("afterbegin", `<article class="article--winner-card article--winner-card-${cardIndex}">
         <p class="header--winner-card">
            <span class="span__challenger1-name">${challengerOneInput.value.toUpperCase()}</span> 
               <span class="versus">VS</span>
@@ -184,7 +194,7 @@ function makeCard(winner) {
       <div class="bottom-data-line">
         <p class="bottom-data-line-paragraph"><span class="total-number-guesses">${nGuesses * 2}</span> guesses</p>
         <p class="bottom-data-line-paragraph"><span class="total-time-spent"> ${(timer / 60).toFixed(2)}</span> minutes</p>
-      <button type="button" class="winner-card-close-button">&times;</button>
+      <button type="button" class="winner-card-close-button winner-card-close-button--${cardIndex}">&times;</button>
     </div>
   </article>`);
 }
