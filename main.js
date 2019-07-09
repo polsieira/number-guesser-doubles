@@ -214,7 +214,6 @@ function checkGuessInput(input, errorMessage) {
   }
 }
 
-
 function increaseRange() {
   min > 10 ? min -= 10 : min = 1 ;
   max += 10;
