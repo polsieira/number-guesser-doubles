@@ -24,12 +24,6 @@ var latestGuessOne = document.querySelector('.span--number-1');
 var latestGuessTwo = document.querySelector('.span--number-2');
 var guessMessageOne = document.querySelector('.span--high-low-1');
 var guessMessageTwo = document.querySelector('.span--high-low-2');
-var minErrorMessage = document.querySelector(".min-error-message");
-var maxErrorMessage = document.querySelector(".max-error-message");
-var nameOneErrorMessage = document.querySelector("nameone-error-message");
-var nameTwoErrorMessage = document.querySelector(".nametwo-error-message");
-var guessOneErrorMessage = document.querySelector(".guessone-error-message");
-var guessTwoErrorMessage = document.querySelector(".guesstwo-error-message");
 var rightSection = document.querySelector(".section--right");
 var timer;
 
@@ -203,15 +197,6 @@ function makeCard(winner) {
       <button type="button" class="winner-card-close-button winner-card-close-button--${cardIndex}">&times;</button>
     </div>
   </article>`);
-}
-
-function checkGuessInput(input, errorMessage) {
-  if (input.value < min || input.value > max){
-      errorMessage.classList.remove("error--hidden");
-      return false;
-  } else {
-    return true;
-  }
 }
 
 function increaseRange() {
