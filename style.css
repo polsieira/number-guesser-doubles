@@ -272,7 +272,20 @@ body {
   font-size: 12px;
 }
 
+.error--styles {
+  height: 10px;
+  color: var(--hot-pink);
+  font-size: 14px;
+}
 
+.error-image {
+  width: 12px;
+  height: 12px;
+}
+
+.error--hidden {
+  visibility: hidden;
+}
 
 /*Media Queries*/
 @media only screen and (max-width: 650px) {

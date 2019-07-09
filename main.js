@@ -3,26 +3,32 @@ var min = 1;
 var max = 100;
 var nGuesses = 0;
 var randInt = getRandInt(min, max);
-var minInput = document.querySelector('.article__form__input--min-range');
-var maxInput = document.querySelector('.article__form__input--max-range');
-var minDisplay = document.querySelector('.bold--min');
-var maxDisplay = document.querySelector('.bold--max');
-var updateButton = document.querySelector('.article__form__button--update');
-var submitButton = document.querySelector('.article__div__button--submit');
-var clearButton = document.querySelector('.article__div__button--clear');
-var restartButton = document.querySelector('.article__div__button--restart');
-var challengerOneInput = document.querySelector('.article__form__input--nameOne');
-var challengerTwoInput = document.querySelector('.article__form__input--nameTwo');
-var challengerOneLabel = document.querySelector('.article__paragraph--challenger-1');
-var challengerTwoLabel = document.querySelector('.article__paragraph--challenger-2');
-var challengerOneLatestGuess = document.querySelector('.span--challenger-1');
-var challengerTwoLatestGuess = document.querySelector('.span--challenger-2');
-var guessOneInput = document.querySelector('.article__form__input--guessOne');
-var guessTwoInput = document.querySelector('.article__form__input--guessTwo');
-var latestGuessOne = document.querySelector('.span--number-1');
-var latestGuessTwo = document.querySelector('.span--number-2');
-var guessMessageOne = document.querySelector('.span--high-low-1');
-var guessMessageTwo = document.querySelector('.span--high-low-2');
+var minInput = document.querySelector(".article__form__input--min-range");
+var maxInput = document.querySelector(".article__form__input--max-range");
+var minDisplay = document.querySelector(".bold--min");
+var maxDisplay = document.querySelector(".bold--max");
+var updateButton = document.querySelector(".article__form__button--update");
+var submitButton = document.querySelector(".article__div__button--submit");
+var clearButton = document.querySelector(".article__div__button--clear");
+var restartButton = document.querySelector(".article__div__button--restart");
+var challengerOneInput = document.querySelector(".article__form__input--nameOne");
+var challengerTwoInput = document.querySelector(".article__form__input--nameTwo");
+var challengerOneLabel = document.querySelector(".article__paragraph--challenger-1");
+var challengerTwoLabel = document.querySelector(".article__paragraph--challenger-2");
+var challengerOneLatestGuess = document.querySelector(".span--challenger-1");
+var challengerTwoLatestGuess = document.querySelector(".span--challenger-2");
+var guessOneInput = document.querySelector(".article__form__input--guessOne");
+var guessTwoInput = document.querySelector(".article__form__input--guessTwo");
+var latestGuessOne = document.querySelector(".span--number-1");
+var latestGuessTwo = document.querySelector(".span--number-2");
+var guessMessageOne = document.querySelector(".span--high-low-1");
+var guessMessageTwo = document.querySelector(".span--high-low-2");
+var minErrorMessage = document.querySelector(".min-error-message");
+var maxErrorMessage = document.querySelector(".max-error-message");
+var nameOneErrorMessage = document.querySelector("nameone-error-message");
+var nameTwoErrorMessage = document.querySelector(".nametwo-error-message");
+var guessOneErrorMessage = document.querySelector(".guessone-error-message");
+var guessTwoErrorMessage = document.querySelector(".guesstwo-error-message");
 var rightSection = document.querySelector(".section--right");
 var timer;
 
@@ -189,11 +195,22 @@ function makeCard(winner) {
   </article>`);
 }
 
+function checkGuessInput(input, errorMessage) {
+  if (input.value < min || input.value > max){
+      errorMessage.classList.remove("error--hidden");
+      return false;
+  } else {
+    return true;
+  }
+}
+
+
 function increaseRange() {
   min > 10 ? min -= 10 : min = 1 ;
   max += 10;
   updateRange(min, max);
 }
+
 
 
 
