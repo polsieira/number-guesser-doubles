@@ -21,8 +21,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   margin: 0px;
-/*  height: 800px;
-  width: 1040px;*/
+  min-width: 320px;
 }
 /* Header */
 .header {
@@ -277,12 +276,6 @@ body {
 
 /*Media Queries*/
 @media only screen and (max-width: 650px) {
-  .button--styles {
-    font-size: 8px !important;
-  }
-}
-
-@media only screen and (max-width: 600px) {
   .section {
     width: 100%;
   }
@@ -302,7 +295,7 @@ body {
     width: 95%;
   }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 650px) {
   .header {
     height: 75px;
     overflow: hidden;
@@ -339,6 +332,9 @@ body {
   .article__form {
     display: flex;
     flex-direction: column;
+  }
+  .article__form--range {
+    align-items: inherit;
   }
   .article__div {
     display: flex;
