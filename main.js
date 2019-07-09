@@ -52,20 +52,22 @@ function onSubmitButton() {
     guessMessageOne.innerText = "that's too high";
   } else if (guessOne < randInt) {
     guessMessageOne.innerText = "that's too low";
-  } else {
+  } else if (guessOne === randInt) {
     guessMessageOne.innerText = "BOOM!";
     makeCard(challengerOneInput.value);
-    clearForm();    
+    clearForm();
+    randInt = getRandInt(min, max);    
   }
 
   if (guessTwo > randInt) {
     guessMessageTwo.innerText = "that's too high";
   } else if (guessTwo < randInt) {
     guessMessageTwo.innerText = "that's too low";
-  } else {
+  } else if (guessTwo === randInt) {
     guessMessageTwo.innerText = "BOOM!"
     makeCard(challengerTwoInput.value);
-    clearForm();    
+    clearForm(); 
+    randInt = getRandInt(min, max);   
   }
 
   enableClearButton();
