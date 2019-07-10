@@ -52,7 +52,7 @@ function onUpdateButton() {
   var maxCheck = verifyRange(maxInput, maxErrorMessage);
   if (minCheck && maxCheck) {
     updateRange(parseInt(min), parseInt(max));
-    randInt = getRandInt(min, max);
+    randInt = getRandInt(parseInt(min), parseInt(max));
   }
   
 }
