@@ -122,6 +122,7 @@ body {
  outline: none;
 }
 .article__form__button {
+  margin-bottom: 10px;
   width: 28%;
 }
 .button--styles {
