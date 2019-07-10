@@ -271,8 +271,8 @@ function verifyRange(input, errorMessage) {
   } else {
     errorMessage.classList.add("error--hidden");
     input.classList.remove("error-border-styles");
-    min = minInput.value;
-    max = maxInput.value; 
+    min = parseInt(minInput.value);
+    max = parseInt(maxInput.value); 
     return true;
   }
 }
