@@ -117,7 +117,7 @@ body {
   padding: 10px 5px 10px 5px
 }
 .input--styles:focus{
- border: solid; 
+ border: solid 2px; 
  border-color: var(--light-pink);
  outline: none;
 }
