@@ -46,8 +46,8 @@ rightSection.addEventListener('click', rightHandler);
 
 // Functions 
 function onUpdateButton() {
-  min = minInput.value;
-  max = maxInput.value;  
+  // min = minInput.value;
+  // max = maxInput.value;  
   var minCheck = verifyRange(minInput, minErrorMessage);
   var maxCheck = verifyRange(maxInput, maxErrorMessage);
   if (minCheck && maxCheck) {
@@ -122,15 +122,15 @@ function checkNameInput(elementValue, errorMessage ) {
 }
 
 function checkGuessInput(input, errorMessage) {
-  if (input.value < min || input.value > max){
-    errorMessage.classList.remove("error--hidden");
-    input.classList.add("error-border-styles");
-    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a value in specified range`;
-    return false;
-  } else if (parseInt(input.value) === NaN ) {
+  if (parseInt(input.value) === NaN || input.value === ""){
     errorMessage.classList.remove("error--hidden");
     input.classList.add("error-border-styles");
     errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a number`;
+    return false;
+  } else if (input.value < min || input.value > max) {
+    errorMessage.classList.remove("error--hidden");
+    input.classList.add("error-border-styles");
+    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a value in specified range`;
     return false;
   } else {
     errorMessage.classList.add("error--hidden");
@@ -159,6 +159,18 @@ function clearForm() {
   challengerTwoInput.value = '';
   guessOneInput.value = '';
   guessTwoInput.value = '';
+  nameOneErrorMessage.classList.add("error--hidden");
+  challengerOneInput.classList.remove("error-border-styles");
+  nameTwoErrorMessage.classList.add("error--hidden");
+  challengerTwoInput.classList.remove("error-border-styles");    
+  guessOneErrorMessage.classList.add("error--hidden");
+  guessOneInput.classList.remove("error-border-styles");  
+  guessTwoErrorMessage.classList.add("error--hidden"); 
+  guessTwoInput.classList.remove("error-border-styles");  
+  minErrorMessage.classList.add("error--hidden");
+  minInput.classList.remove("error-border-styles");  
+  maxErrorMessage.classList.add("error--hidden");
+  maxInput.classList.remove("error-border-styles");    
 }
 
 function clearLatestGuess() {
@@ -245,7 +257,8 @@ function increaseRange() {
 }
 
 function verifyRange(input, errorMessage) {
-  if (min > max) {
+  console.log(input.value)
+  if (minInput.value > maxInput.value) {
       errorMessage.classList.remove("error--hidden");
       input.classList.add("error-border-styles");
       errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Minimum cannot be higher than maximum`;
@@ -258,6 +271,8 @@ function verifyRange(input, errorMessage) {
   } else {
     errorMessage.classList.add("error--hidden");
     input.classList.remove("error-border-styles");
+    min = minInput.value;
+    max = maxInput.value; 
     return true;
   }
 }
