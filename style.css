@@ -350,7 +350,7 @@ body {
   }
   .article--latest-score {
     margin-bottom: 20px;
-    height: 395px;
+    height: 453px;
   }
   .article__form--range {
     align-items: inherit;
@@ -384,6 +384,7 @@ body {
   }
   .article__div--latest-score {
     display: block;
+
   }
   .article__div--right,
   .article__div--left {
