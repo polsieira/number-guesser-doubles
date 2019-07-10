@@ -89,8 +89,9 @@ body {
 }
 .article__paragraph {
   display: block;
+  font-size: 20px;
   margin: 15px auto 0px auto;
-  width: 90%
+  width: 90%;
 }
 .article__form {
   align-items: flex-end;
@@ -104,7 +105,7 @@ body {
   width: 28%;
 }
 .label--styles {
-  font-size: 12px;
+  font-size: 16px;
 }
 .article__form__div__input {
   display: block;
@@ -118,7 +119,7 @@ body {
 .input--styles {
   box-sizing: border-box;
   display: block;
-  height: 20px;
+  height: 35px;
   padding: 10px 5px 10px 5px
 }
 .input--styles:focus{
@@ -136,7 +137,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   font-weight: bold;
-  height: 26px;
+  height: 35px;
 }
 .button--styles:focus{
  border-color:transparent!important;
@@ -164,6 +165,7 @@ body {
 }
 .article--latest-score {
   margin-bottom: 20px;
+  height: 235px;
 }
 .article__div {
   margin: auto;
@@ -189,11 +191,11 @@ body {
 
 .span--challenger-1,
 .span--challenger-2 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
 }
 .span--current-guess {
-  font-size: 14px;
+  font-size: 15px;
 }
 .span--number {
   color: var(--light-pink);
@@ -202,13 +204,15 @@ body {
 }
 /*Content Section Right*/
 .section--right {
-  background-color: var(--grey);
+  background-color: rgba(64,64,65,0.3);
 }
+
 /*Winner Cards*/
 .article--winner-card {
   background-color: #ffffff;
-  border: var(--light-grey) 1.5px solid;
+  border: #AAAAAA 1.5px solid;
   margin: 20px auto 0px auto;
+  opacity: 1;
   width: 80%;
 }
 .span__challenger1-name,
@@ -300,6 +304,10 @@ body {
   }  
   .section {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
   }  
   .header {
     height: 75px;
@@ -330,6 +338,7 @@ body {
   .article {
     display: flex;
     flex-direction: column;
+    width: 95%;
   }
   .article__paragraph {
     margin: 8px auto 0px auto;
@@ -337,6 +346,11 @@ body {
   .article__form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .article--latest-score {
+    margin-bottom: 20px;
+    height: 395px;
   }
   .article__form--range {
     align-items: inherit;
@@ -358,8 +372,11 @@ body {
   }
   .article__form__button {
     margin-right: 180px;
-    margin-top: 15px;
     width: 30%;
+  }
+
+  .article__form__button--update {
+    width: 39%;
   }
   .article__div__button {
     margin: 5px auto;
@@ -372,6 +389,9 @@ body {
   .article__div--left {
     width: 100%
   }
+  .article__div--left {
+    border-right: none; 
+  }
   .article__div--left:after{
     border-bottom: 1px solid var(--light-grey);
     content: "";
@@ -380,8 +400,15 @@ body {
     padding-top: 5px;
     width: 75%;
   }
+
+  .article--winner-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 95%;
+  }
   .button--styles {
     height: 30px;
+    font-size: 15px;
   }
   .article__div__button {
     margin-top: 15px;
@@ -404,4 +431,11 @@ body {
   }
 }
 
+@media only screen and (min-width: 650px) and (max-width: 1060px) {
+  .article__div__button--submit,
+  .article__div__button--clear,
+  .article__div__button--restart {
+    font-size: 12px;
+  }
+}
 
