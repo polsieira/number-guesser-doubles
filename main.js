@@ -114,7 +114,7 @@ function checkNameInput(elementValue, errorMessage ) {
   } else {
     errorMessage.classList.remove("error--hidden");
     elementValue.classList.add("error-border-styles");
-    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a name`;
+    errorMessage.innerHTML = `<img src="Images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a name`;
     return false;
   }
 }
@@ -123,12 +123,12 @@ function checkGuessInput(input, errorMessage) {
   if (parseInt(input.value) === NaN || input.value === ""){
     errorMessage.classList.remove("error--hidden");
     input.classList.add("error-border-styles");
-    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a number`;
+    errorMessage.innerHTML = `<img src="Images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a number`;
     return false;
   } else if (input.value < min || input.value > max) {
     errorMessage.classList.remove("error--hidden");
     input.classList.add("error-border-styles");
-    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a value in specified range`;
+    errorMessage.innerHTML = `<img src="Images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a value in specified range`;
     return false;
   } else {
     errorMessage.classList.add("error--hidden");
@@ -258,12 +258,12 @@ function verifyRange(input, errorMessage) {
   if (minInput.value > maxInput.value) {
       errorMessage.classList.remove("error--hidden");
       input.classList.add("error-border-styles");
-      errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Minimum cannot be higher than maximum`;
+      errorMessage.innerHTML = `<img src="Images/error-icon.svg" class="error-image" alt ="Error icon">  Minimum cannot be higher than maximum`;
       return false;
   }  else if (input.value.length === 0){ 
       errorMessage.classList.remove("error--hidden");
       input.classList.add("error-border-styles");
-      errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Please input a number`;
+      errorMessage.innerHTML = `<img src="Images/error-icon.svg" class="error-image" alt ="Error icon">  Please input a number`;
       return false;
   } else {
     errorMessage.classList.add("error--hidden");
