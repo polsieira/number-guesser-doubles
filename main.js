@@ -234,7 +234,7 @@ function makeCard(winner) {
           <span class="span__challenger2-name">${challengerTwoInput.value.toUpperCase()}</span></p>
       <div class="article__div__winner-card">
         <p class="challenge-winner">
-          <span class="winning-challenger-name">${winner}</span><br/>
+          <span class="winning-challenger-name">${winner.toUpperCase()}</span><br/>
           WINNER
         </p>
       </div>
