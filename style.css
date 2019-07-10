@@ -16,7 +16,7 @@
 }
 /*Body*/
 body {
-  border: var(--dark-grey) 2px solid;
+/*  border: var(--dark-grey) 2px solid;*/
   color: var(--grey);
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
@@ -74,12 +74,12 @@ body {
 /*Section*/
 .section {
   box-sizing: border-box;
-  border: var(--dark-grey) 1px solid;
   margin: 0px;
   width: 50%;
 }
 .section--left {
   background-color: var(--lightest-grey);
+  border-right: var(--dark-grey) 1px solid;  
 }
 .article {
   background-color: #ffffff;
@@ -122,11 +122,12 @@ body {
   padding: 10px 5px 10px 5px
 }
 .input--styles:focus{
- border: solid; 
+ border: solid 2px; 
  border-color: var(--light-pink);
  outline: none;
 }
 .article__form__button {
+  margin-bottom: 10px;
   width: 28%;
 }
 .button--styles {
