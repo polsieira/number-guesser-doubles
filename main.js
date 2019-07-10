@@ -26,7 +26,7 @@ var guessMessageOne = document.querySelector(".span--high-low-1");
 var guessMessageTwo = document.querySelector(".span--high-low-2");
 var minErrorMessage = document.querySelector(".min-error-message");
 var maxErrorMessage = document.querySelector(".max-error-message");
-var nameOneErrorMessage = document.querySelector("nameone-error-message");
+var nameOneErrorMessage = document.querySelector(".nameone-error-message");
 var nameTwoErrorMessage = document.querySelector(".nametwo-error-message");
 var guessOneErrorMessage = document.querySelector(".guessone-error-message");
 var guessTwoErrorMessage = document.querySelector(".guesstwo-error-message");
@@ -46,21 +46,32 @@ rightSection.addEventListener('click', rightHandler);
 
 // Functions 
 function onUpdateButton() {
-  updateRange(parseInt(minInput.value), parseInt(maxInput.value));
-  randInt = getRandInt(min, max);
+  min = minInput.value;
+  max = maxInput.value;  
+  var minCheck = verifyRange(minInput, minErrorMessage);
+  var maxCheck = verifyRange(maxInput, maxErrorMessage);
+  if (minCheck && maxCheck) {
+    updateRange(parseInt(min), parseInt(max));
+    randInt = getRandInt(min, max);
+  }
+  
 }
 
 function onSubmitButton() {
-  checkInput(challengerOneInput);
-  checkInput(challengerTwoInput);
-  setTimer();  
-  updateGuess();
-  updateName();
-  updateLatestGuess();
-  checkGuess(guessOne, guessMessageOne, challengerOneInput);
-  checkGuess(guessTwo, guessMessageTwo, challengerTwoInput);
-  enableClearButton();
-  enableRestartButton();
+  var checkGuessOne = checkGuessInput(guessOneInput, guessOneErrorMessage);
+  var checkGuessTwo = checkGuessInput(guessTwoInput, guessTwoErrorMessage);
+  var checkNameOne = checkNameInput(challengerOneInput, nameOneErrorMessage);
+  var checkNameTwo = checkNameInput(challengerTwoInput, nameTwoErrorMessage);
+  if (checkGuessOne && checkGuessTwo && checkNameOne && checkNameTwo) {
+    setTimer();  
+    updateGuess();
+    updateName();
+    updateLatestGuess();
+    checkGuess(guessOne, guessMessageOne, challengerOneInput);
+    checkGuess(guessTwo, guessMessageTwo, challengerTwoInput);
+    enableClearButton();
+    enableRestartButton();
+  }  
 }
 
 function onClearButton() {
@@ -96,13 +107,35 @@ function setTimer() {
   }
 }
 
-function checkInput(elementValue) {
+function checkNameInput(elementValue, errorMessage ) {
   var letters = /[0-9a-zA-Z]/;
   if (elementValue.value.match(letters)){
+    errorMessage.classList.add("error--hidden");
+    elementValue.classList.remove("error-border-styles");
     return true;
   } else {
-    alert('Enter a name');
+    errorMessage.classList.remove("error--hidden");
+    elementValue.classList.add("error-border-styles");
+    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a name`;
     return false;
+  }
+}
+
+function checkGuessInput(input, errorMessage) {
+  if (input.value < min || input.value > max){
+    errorMessage.classList.remove("error--hidden");
+    input.classList.add("error-border-styles");
+    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a value in specified range`;
+    return false;
+  } else if (parseInt(input.value) === NaN ) {
+    errorMessage.classList.remove("error--hidden");
+    input.classList.add("error-border-styles");
+    errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Enter a number`;
+    return false;
+  } else {
+    errorMessage.classList.add("error--hidden");
+    input.classList.remove("error-border-styles");
+    return true;
   }
 }
 
@@ -149,9 +182,7 @@ function updateGuess() {
   nGuesses ++;
 }
 
-function updateRange(newMin, newMax) {
-  min = newMin;
-  max = newMax;
+function updateRange(min, max) {
   minDisplay.innerText = min;
   maxDisplay.innerText = max;
   minInput.value = '';
@@ -198,26 +229,37 @@ function makeCard(winner) {
         </p>
       </div>
       <div class="bottom-data-line">
-        <p class="bottom-data-line-paragraph"><span class="total-number-guesses">${nGuesses * 2}</span> guesses</p>
+        <p class="bottom-data-line-paragraph"><span class="total-number-guesses">${nGuesses}</span> guesses</p>
         <p class="bottom-data-line-paragraph"><span class="total-time-spent"> ${(timer / 60).toFixed(2)}</span> minutes</p>
         <button type="button" class="winner-card-close-button winner-card-close-button--${cardIndex}">&times;</button>
      </div>
   </article>`);
 }
 
-function checkGuessInput(input, errorMessage) {
-  if (input.value < min || input.value > max){
-      errorMessage.classList.remove("error--hidden");
-      return false;
-  } else {
-    return true;
-  }
-}
+
 
 function increaseRange() {
   min > 10 ? min -= 10 : min = 1 ;
   max += 10;
   updateRange(min, max);
+}
+
+function verifyRange(input, errorMessage) {
+  if (min > max) {
+      errorMessage.classList.remove("error--hidden");
+      input.classList.add("error-border-styles");
+      errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Minimum cannot be higher than maximum`;
+      return false;
+  }  else if (input.value.length === 0){ 
+      errorMessage.classList.remove("error--hidden");
+      input.classList.add("error-border-styles");
+      errorMessage.innerHTML = `<img src="images/error-icon.svg" class="error-image" alt ="Error icon">  Please input a number`;
+      return false;
+  } else {
+    errorMessage.classList.add("error--hidden");
+    input.classList.remove("error-border-styles");
+    return true;
+  }
 }
 
 

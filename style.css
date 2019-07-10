@@ -110,6 +110,11 @@ body {
   display: block;
   width: 100%;
 }
+.error-border-styles {
+  border: solid 1px; 
+  border-color: var(--light-pink);
+  outline: none;
+}
 .input--styles {
   box-sizing: border-box;
   display: block;
@@ -275,7 +280,7 @@ body {
 .error--styles {
   height: 10px;
   color: var(--hot-pink);
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .error-image {
