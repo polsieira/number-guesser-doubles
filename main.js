@@ -108,7 +108,7 @@ function setTimer() {
 }
 
 function checkNameInput(elementValue, errorMessage ) {
-  var letters = /[0-9a-zA-Z]/;
+  var letters = /^[0-9a-zA-Z]+$/;
   if (elementValue.value.match(letters)){
     errorMessage.classList.add("error--hidden");
     elementValue.classList.remove("error-border-styles");
