@@ -241,7 +241,7 @@ function makeCard(winner) {
       <div class="bottom-data-line">
         <p class="bottom-data-line-paragraph"><span class="total-number-guesses">${nGuesses * 2}</span> guesses</p>
         <p class="bottom-data-line-paragraph"><span class="total-time-spent"> ${(timer / 60).toFixed(2)}</span> minutes</p>
-        <button type="button" class="winner-card-close-button winner-card-close-button--${cardIndex}">&times;</button>
+        <button type="button" class="winner-card-close-button winner-card-close-button--${cardIndex} button--styles button--states">&times;</button>
      </div>
   </article>`);
 }
