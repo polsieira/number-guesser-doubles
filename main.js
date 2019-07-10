@@ -46,8 +46,6 @@ rightSection.addEventListener('click', rightHandler);
 
 // Functions 
 function onUpdateButton() {
-  // min = minInput.value;
-  // max = maxInput.value;  
   var minCheck = verifyRange(minInput, minErrorMessage);
   var maxCheck = verifyRange(maxInput, maxErrorMessage);
   if (minCheck && maxCheck) {
@@ -257,7 +255,6 @@ function increaseRange() {
 }
 
 function verifyRange(input, errorMessage) {
-  console.log(input.value)
   if (minInput.value > maxInput.value) {
       errorMessage.classList.remove("error--hidden");
       input.classList.add("error-border-styles");
