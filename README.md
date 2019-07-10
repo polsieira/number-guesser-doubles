@@ -19,13 +19,13 @@ While the winner cards were initially implemented using basic CSS and some JavaS
 
 Layout comps provided by Turing School:
 
-![Desktop Layout](./images/number-guesser-comp.png)
-![Mobile Layout](./images/number-guesser-mobile-comp.png)
-![Error Message](./images/number-guesser-error-comp.png)
+![Desktop Layout](./Images/number-guesser-comp.png)
+![Mobile Layout](./Images/number-guesser-mobile-comp.png)
+![Error Message](./Images/number-guesser-error-comp.png)
 
 Results:
-![Final desktop layout](./images/number-guesser.png)
-![Mobile](./images/number-guesser-mobile.png)
-![Error Messages](./images/number-guesser-error.png)
+![Final desktop layout](./Images/number-guesser.png)
+![Mobile](./Images/number-guesser-mobile.png)
+![Error Messages](./Images/number-guesser-error.png)
 
 
